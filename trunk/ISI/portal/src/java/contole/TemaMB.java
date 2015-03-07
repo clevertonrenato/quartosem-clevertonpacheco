@@ -28,10 +28,10 @@ public class TemaMB {
     }
     
     public void carregarTema(){
-    this.tema.setAutor("Cléverton");
+    //this.tema.setAutor("Cléverton");
     this.tema.setNome("Classificados");
-    this.tema.setCor_fundo("#FFFFFF");
-    this.tema.setCor_titulo("#000000");
+   // this.cor = this.tema.setCor_fundo("red");
+    //this.tema.setCor_titulo("#000000");
     
     }
     
