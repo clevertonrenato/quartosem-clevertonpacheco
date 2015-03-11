@@ -1,10 +1,11 @@
 
 package modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
-public class Noticia {
+public class Noticia implements Serializable {
     private String titulo;
     private String noticia;
     private Date data_hora;
