@@ -1,6 +1,7 @@
 
 package contole;
 
+import java.io.Serializable;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import modelo.Tema;
@@ -11,11 +12,12 @@ import modelo.Tema;
  */
 @Named(value = "temaMB")
 @Dependent
-public class TemaMB {
+public class TemaMB implements Serializable {
 
     private Tema tema;
     
     public TemaMB() {
+        tema = new Tema();
        this.carregarTema();
     }
 
@@ -28,10 +30,10 @@ public class TemaMB {
     }
     
     public void carregarTema(){
-    //this.tema.setAutor("Cléverton");
-    this.tema.setNome("Classificados");
-   // this.cor = this.tema.setCor_fundo("red");
-    //this.tema.setCor_titulo("#000000");
+    this.tema.setAutor("Cléverton");
+    this.tema.setNome("Política");
+   this.tema.setCor_fundo("#000000");
+    this.tema.setCor_titulo("#FFFFFF");
     
     }
     

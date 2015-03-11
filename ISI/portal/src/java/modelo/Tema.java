@@ -1,8 +1,10 @@
 
 package modelo;
 
+import java.io.Serializable;
 
-public class Tema {
+
+public class Tema implements Serializable {
     private String nome;
     private String autor;
     private String cor_titulo;
