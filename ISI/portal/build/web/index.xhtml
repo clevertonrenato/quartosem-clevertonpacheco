@@ -14,22 +14,26 @@
         <h:form>
             
             <h:inputText id="pesquisa"/><h:button value="Pesquisar"/>
-            <h:dataTable value="noticiapolitica" var="item">
+            <h:dataTable value="#{noticiaMB.listar()}" var="item">
                 
                 <h:column>
                     <f:facet name="header">Título</f:facet>
+                    #{item.titulo}
                 </h:column>
                 
                 <h:column>
                     <f:facet name="header">Texto</f:facet>
+                    #{item.noticia}
                 </h:column>
                 
                 <h:column>
                     <f:facet name="header">Data Hora</f:facet>
+                    #{item.data_hora}
                 </h:column>
                 
                 <h:column>
                     <f:facet name="header">Fonte</f:facet>
+                    #{item.fonte}
                 </h:column>
                 
             </h:dataTable>
