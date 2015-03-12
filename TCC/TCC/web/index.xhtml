@@ -6,7 +6,38 @@
         <title>Lancheria</title>
     </h:head>
     <h:body>
-        
+        <h1>Cadastro de cliente</h1>
+        <h:form>
+
+            <h:panelGrid columns="2">
+                <h:outputLabel id="lbnome" value="Nome" for="ednome"/>
+                <h:inputText id="ednome" label="lbnome" value="" readonly="true"/>
+
+                <h:outputLabel id="lbcpf" value="CPF" for="edcpf"/>
+                <h:inputText id="edcpf" label="lbcpf" value=""/>
+
+                <h:outputLabel id="lbcep" value="Informe o Cep" for="edcep"/>
+                <h:inputText id="edcep" label="lbcep" value=""/>
+
+                <h:outputLabel id="lbnumero" value="Número" for="ednumero"/>
+                <h:inputText id="ednumero" label="lbnumero" value=""/>
+
+                <h:outputLabel id="lbbairro" value="bairro" for="edbairro"/>
+                <h:inputText id="edbairro" label="lbbairro" value=""/>
+
+                <h:outputLabel id="lbrua" value="Rua" for="edRua"/>              
+                <h:inputText id="edrua" label="lbrua" value=""/>
+                
+                <h:outputLabel id="lbemail" value="Email" for="edemail"/>              
+                <h:inputText id="edemail" label="lbemail" value=""/>
+                
+                <h:outputLabel id="lbtelefone" value="Telefone" for="edtelefone"/>              
+                <h:inputText id="edtelefone" label="lbtelefone" value=""/>  
+                
+            </h:panelGrid>
+            <h:commandButton id="btNovo" value="Novo"/>
+            <h:commandButton id="btSalvar" value="Salvar"/>
+        </h:form>
     </h:body>
 </html>
 

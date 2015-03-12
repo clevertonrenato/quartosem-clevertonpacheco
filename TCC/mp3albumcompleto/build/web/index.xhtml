@@ -1,76 +1,16 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>MP3Album versão 1.0</title>
-    </h:head>
-    <h:body>
-        <h1>Cadastro de MP3</h1>
-        <h:form>
-            <h:inputHidden id="edIDOculto" value="#{indexMB.mp3.id}"/>
-            <h:panelGrid columns="2">
-                <h:outputLabel id="lbID" value="ID" for="edID"/>
-                <h:inputText id="edID" label="lbID" value="#{indexMB.mp3.id}" readonly="true"/>
-                <h:outputLabel id="lbMusica" value="Música" for="edMusica"/>
-                <h:inputText id="edMusica" label="lbMusica" value="#{indexMB.mp3.musica}"/>
-                <h:outputLabel id="lbMusicoBanda" value="Músico/Banda" for="edMusicoBanda"/>
-                <h:inputText id="edMusicoBanda" label="lbMusicoBanda" value="#{indexMB.mp3.musicobanda}"/>
-                <h:outputLabel id="lbAno" value="Ano" for="edAno"/>
-                <h:inputText id="edAno" label="lbAno" value="#{indexMB.mp3.ano}"/>
-                <h:outputLabel id="lbGenero" value="Gênero" for="edGenero"/>              
-                <h:selectOneMenu value="#{indexMB.mp3.genero}" converter="conversorGenero">
-                    <f:selectItems value="#{indexMB.generos}" var="genero" itemLabel="#{genero.descricao}" itemValue="#{genero}"/>
-                </h:selectOneMenu>
-            </h:panelGrid>
-            <h:commandButton id="btNovo" value="Novo" action="#{indexMB.novo()}"/>
-            <h:commandButton id="btSalvar" value="Salvar" action="#{indexMB.salvar()}"/>
-        </h:form>
-        <h:form>
-            <h:dataTable var="musica" value="#{indexMB.musicas}">
-                <h:column>
-                    <f:facet name="header">
-                        <h:commandLink value="ID" action="#{indexMB.ordenaPorID()}"/>
-                    </f:facet>
-                    #{musica.id}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:commandLink value="Música" action="#{indexMB.ordenaPorMusica()}"/>
-                    </f:facet>
-                    #{musica.musica}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        Músico/Banda
-                    </f:facet>
-                    #{musica.musicobanda}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        Ano
-                    </f:facet>
-                    #{musica.ano}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        Gênero
-                    </f:facet>
-                    #{musica.genero.descricao}
-                </h:column>
-                
-                <h:column>
-                    <h:commandLink value="Editar" action="#{indexMB.editar(musica)}"/>
-                </h:column>
-                
-                <h:column>
-                    <h:commandLink value="Excluir" action="#{indexMB.excluir(musica)}"
-                                   onclick="return confirm('Confirma a exclusão da música?')"/>
-                </h:column>
-                
-            </h:dataTable>            
-        </h:form>        
-    </h:body>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
 </html>
-
