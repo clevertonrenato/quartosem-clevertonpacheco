@@ -1,0 +1,330 @@
+/* 
+    Created on : 13/03/2015, 19:50:02
+    Author     : Renato
+*/
+
+﻿#pagina{
+    width:100%;
+    height:auto;
+}
+body{
+    width: 100%;
+    
+    background-color: #E8E8E8;
+    background-image: url("img/fundo1.jpg");
+    background-size: 100% 100%;
+}
+
+#cebecalhot{
+    box-shadow: 4px 1px 9px black;
+    width: 946.8px;
+    height:158px;
+    margin-right:auto;
+    margin-left:auto;
+
+}
+#cabecalho{
+    background-color:#ffffff ;
+    width: 946.8px;
+    height:120px;
+    margin-right:auto;
+    margin-left:auto;
+    background-image: url("img/fundo.jpg");
+    background-size: 100% 100%;
+}
+
+.logo{
+    margin-bottom: 10px;
+}
+.lanche1{
+    width: 200px;
+    height:120px;
+}
+.lanche2{
+
+    width: 300px;
+    height:120px;
+    margin-left:50px;
+    margin-bottom: 5px;
+}
+
+#link{
+    width: 946.9px;
+    height:30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: red;
+}
+.menu{
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    height: 30px;
+    margin-left: 20px;
+
+}
+
+.menu ul{ 
+    list-style: none;
+
+}
+
+.menu li{ 
+    display: inline;
+    float: left;
+    padding:0px;
+    margin: 0px;
+    width: 205.35px;
+    margin-left: -20px;
+
+}
+.menu a{
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #ffffff;
+    font-family:Verdana;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    background-color: #f5f5f5;
+}
+.menu :hover{
+    color: white;
+    background-color: #ba3e14;
+}
+
+.linkhome {
+    color: black;
+    border-width: 1px 0px 0px 0px;
+    border-color: #c9c7c7;
+    border-style: solid;
+    background-color: red;
+}
+.linkempresa{
+    color: black;
+    border-width: 1px 0px 0px 1px;
+    border-color: #c9c7c7;
+    border-style: solid;
+
+}
+.linkservicos{
+    color: black;
+    border-width: 1px 1px 0px 1px;
+    border-color: #c9c7c7;
+    border-style: solid;
+
+}
+.linkfotos{
+    color: black;
+    border-width: 1px 0px 0px 1px;
+    border-color: #c9c7c7;
+    border-style: solid;
+
+}
+.linkcontatos{
+
+    color: black;
+    border-width: 1px 0px 0px 1px;
+    border-color: #c9c7c7;
+    border-style: solid;
+
+}
+
+
+#baner{
+    width: 946.5px;
+    height:250px;
+    box-shadow: 4px 1px 9px black;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 30px;
+    background-image: url("img/baner2.jpg");
+    background-size: 100% 100%;
+}
+
+#corpo{
+    width: 947px;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+#texto{
+    box-shadow: 4px 1px 9px black;
+    width: 590px;
+    height:350px;
+    float:right;
+    font: 12px verdana;
+    background-image: url("img/fundo.jpg");
+    background-size: 100% 100%;
+}
+h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#imagem{
+    width: 320px;
+    height:350px;
+    background-image: url("img/baner1.jpg");
+    background-size: 100% 100%;
+    box-shadow: 4px 1px 9px black;
+}
+#imagem_empresa{
+    box-shadow: 4px 1px 9px black;
+    width: 320px;
+    height:350px;
+    background-image: url("img/imagem_empresa.jpg");
+    background-size: 100% 100%;
+}
+.texto{
+    width: 530px;
+    height:250px;
+    margin-left:40px;
+
+}
+#imagem_serviços{
+    box-shadow: 4px 1px 9px black;
+    width: 320px;
+    height:350px;
+    background-image: url("img/imagem_serviços.jpg");
+    background-size: 100% 100%;
+
+}
+#lium{
+
+    float:left;
+    width: 210px;
+    height:200px;
+    margin-left: 53px;
+    margin-right: 53px;
+
+
+}
+#lidois{
+    float:right;
+    width: 210px;
+    height:200px;
+    margin-right: 53px;
+
+}
+#fotos{
+    width: 947px;
+    height:auto;
+    box-shadow: 4px 1px 9px black;
+    background-image: url("img/fundo.jpg");
+    background-size: 100% 100%;
+    padding-bottom: 25px;
+    padding-top: 5px;
+}
+.fotos{
+    width: 145px;
+    height:130px;
+}
+.fotos1{
+    width: 145px;
+    height:130px; 
+    margin-left: 30px;
+}
+
+#img_form{
+    width: 280px;
+    height: 260px;
+    background-image: url("img/img_contato1.png");
+    background-size: 100% 100%; 
+    margin-left: 50px;
+    float:left;
+}
+#formulario{
+
+    width: 948px;
+    height: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 4px 1px 9px black;
+    padding-top: 7px;
+    background-image: url("img/fundo.jpg");
+    background-size: 100% 100%;
+
+}
+
+#um{
+    margin-left: 50px;
+    margin-top: 30px;
+    width: 155px;
+    height: 245px;
+    float:left;
+}
+label{
+    display:block;
+    text-align:right;
+    margin: 8px;
+    font: verdana;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+}
+#dois{
+
+    margin-top: 30px;
+    margin-right:70px;
+    width: 320px;
+    height: 245px;
+    float:right;   
+}
+input{
+    padding: 3px;
+    display:block;
+    margin: 10.5px;
+    width: 300px;
+    font-weight: bold;
+    font-style: italic;
+
+}
+textarea{
+    width: 304px;
+    margin: 9px;
+    margin-top: 0px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 2px;
+}
+button{
+
+    padding: 3px;
+    width: 147.5px;
+    margin-left: 10px;
+    font: 18px verdana;
+
+}
+.botao:hover{
+    color: white;
+    background-color: #ba3e14;  
+}
+
+/*Formatação do rodapé*/
+#rodape{
+    box-shadow: 4px 1px 9px black;
+    width:947px; 
+    height:100px; 
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 30px;
+    background-image: url("img/fundo.jpg");
+    background-size: 100% 100%;
+}
+#texto_rodape
+{
+    padding-top: 30px;
+    margin-top:25px;
+    margin-left:auto;
+    margin-right: auto;
+    width:350px; 
+    height:40px;
+    text-align:center;
+    font: 11px verdana;
+
+}
+
+
