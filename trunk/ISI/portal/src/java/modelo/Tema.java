@@ -5,10 +5,20 @@ import java.io.Serializable;
 
 
 public class Tema implements Serializable {
+    private int id;
     private String nome;
     private String autor;
     private String cor_titulo;
     private String cor_fundo;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
 
     public String getNome() {
         return nome;

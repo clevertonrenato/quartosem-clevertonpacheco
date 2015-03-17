@@ -1,5 +1,6 @@
 package contole;
 
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,6 +9,7 @@ import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import modelo.Noticia;
+import persistencia.NoticiaDAO;
 
 /**
  *
@@ -18,8 +20,14 @@ import modelo.Noticia;
 public class NoticiaMB {
 
     private Noticia noticia;
+    
+    private NoticiaDAO noticiaDAO;
 
-    public NoticiaMB() {
+    public NoticiaMB() throws SQLException {
+        
+         noticia = new Noticia();        
+        noticiaDAO = new NoticiaDAO();
+       // noticias = noticiaDAO.getTodosMp3(NoticiaDAO.ORDEM_POR_ID);
     }
 
     public Noticia getNoticia() {
