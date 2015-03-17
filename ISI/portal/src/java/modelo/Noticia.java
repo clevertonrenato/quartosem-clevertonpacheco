@@ -6,10 +6,20 @@ import java.util.Date;
 
 
 public class Noticia implements Serializable {
+    private int id;
     private String titulo;
     private String noticia;
     private Date data_hora;
     private String fonte;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
 
     public String getTitulo() {
         return titulo;
