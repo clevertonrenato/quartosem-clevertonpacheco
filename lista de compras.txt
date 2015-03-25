@@ -19,3 +19,5 @@ CREATE TABLE noticia
 SELECT * FROM noticia;
 
 INSERT INTO noticia VALUES (1,'CPI PETROBRAS', 'DILMA DIZ QUE NÃO ROUBOU','2015/03/08','G1');
+INSERT INTO noticia VALUES (2,'Não tem reforma ministerial, diz Dilma', 'Ministro da Educação pediu demissão após bate-boca com deputados.
+Presidente afirmou que alterações no primeiro escalão serão pontuais','19/03/2015','G1');
