@@ -4,17 +4,22 @@
     Author     : Renato
 */
 html{
-    
+
     width: 100%;
     height: 100%;
+
+ background-image: url("img/fundo2.jpg");
+    background-size: 100% 100% 100% 100%;
+    background-repeat: no-repeat;
 }
 
 body{
-
+   
+    background-repeat: no-repeat;
     border-color: #c9c7c7;
     border-style: solid;
     width: auto;
-    height: 100%;
+    height: auto;
 
 }
 
@@ -24,27 +29,27 @@ body{
     border-style: solid;
     width: 100%;
     height: 185px; 
-
+    // position: fixed;
 }
 /*img logo*/
 .logo{
     width: 200px;
     height:180px;
 }
+
+
 /*inicio link*/
 #link{
-    width: 946.9px;
-    height:30px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: red;
+    width: 100%;
+    height:37px;
+    background-color: yellow;
+
 }
 .menu{
-    margin: 0px;
-    padding: 0px;
-    width: auto;
-    height: 30px;
-    margin-left: 20px;
+    margin-top:  0px;
+    width: 90%;
+    height: 100%;
+    margin-left: 6.5%;
 
 }
 
@@ -56,71 +61,155 @@ body{
 .menu li{ 
     display: inline;
     float: left;
-    padding:0px;
+    //padding:0px;
     margin: 0px;
-    width: 205.35px;
-    margin-left: -20px;
+    width: 15%;
+    //margin-left: auto;
+    //margin-right: auto;
 
 }
 .menu a{
     display: block;
     text-decoration: none;
     padding: 10px;
-    background-color: #ffffff;
+    //background-color: #ffffff;
     font-family:Verdana;
     font-size: 14px;
     font-weight: bold;
     color: black;
-    background-color: #f5f5f5;
+    background-color: yellow;
+    text-align: center;
 }
 .menu :hover{
     color: white;
     background-color: #ba3e14;
 }
 
-.linkhome {
-    color: black;
-    border-width: 1px 0px 0px 0px;
-    border-color: #c9c7c7;
-    border-style: solid;
-    background-color: red;
-}
-.linkempresa{
-    color: black;
-    border-width: 1px 0px 0px 1px;
-    border-color: #c9c7c7;
-    border-style: solid;
-
-}
-.linkservicos{
-    color: black;
-    border-width: 1px 1px 0px 1px;
-    border-color: #c9c7c7;
-    border-style: solid;
-
-}
-.linkfotos{
-    color: black;
-    border-width: 1px 0px 0px 1px;
-    border-color: #c9c7c7;
-    border-style: solid;
-
-}
-.linkcontatos{
-
-    color: black;
-    border-width: 1px 0px 0px 1px;
-    border-color: #c9c7c7;
-    border-style: solid;
-
-}
 /*inicio div */
 #segunda{
-    
+    background-image: url("img/slide.jpg");
+    background-size: 100% 100%;
     border-color: black;
     border-style: solid;
-    width: 47%;
-    height: auto; 
-    float:left;
+    width: 70%;
+    height: 350px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+#tudo{
+
+
+    width: 70%;
+    height: 242px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#pedido{
+    background-image: url("img/pedido.png");
+    background-size: 100% 100%;
+    border-color: black;
+    border-style: solid;
+    width: 29.4%;
+    height: 85%;
+    float: left;
     margin:15px;
+}
+
+#cardapio{
+    //background-image: url("img/cardapio.gif");
+    background-size: 100% 100%;
+    border-color: black;
+    border-style: solid;
+    width: 29.4%;
+    height: 85%;
+    float: left;
+    position: relative;
+    margin:15px;
+}
+
+#cadastrar{
+    background-image: url("img/cardapio.gif");
+    background-size: 100% 100%;
+    border-color: black;
+    border-style: solid;
+    width: 29.4%;
+    height: 85%;
+    float: left;
+    position: relative;
+    margin:15px;
+}
+
+#ufc{
+    background-image: url("img/slide.jpg");
+    background-size: 100% 100%;
+    border-color: black;
+    border-style: solid;
+    width: 30%;
+    height: 250px; 
+    margin-top: 10px;
+    margin-right: 18%;
+    float: right;
+}
+
+#futebol{
+    background-image: url("img/brasileiro.jpg");
+    background-size: 100% 100%;
+    border-color: black;
+    border-style: solid;
+    width: 30%;
+    height: 250px; 
+    margin-top: 10px;
+    margin-left: 18%;
+    float: left;
+}
+
+form{
+  margin-left:auto;
+    margin-right: auto;  
+    border-color: black;
+    border-style: solid;
+    width: 50%;
+    height: 700px;
+    margin-top: 10%;
+    font-size: 150%;
+}
+
+.imput{
+    
+    width: 250%;
+    height: 30px
+}
+.botao{
+     width: 20%;
+    height: 50px
+    
+}
+
+
+#rodape{
+    border-color: black;
+    border-style: solid;
+    width:100%; 
+    height:100px; 
+    margin-left:auto;
+    margin-right: auto;
+   margin-top: 350px;
+    background-image: url("img/.jpg");
+    background-size: 100% 100%;
+
+}
+#texto_rodape
+{
+    //padding-top: 30px;
+    margin-top:25px;
+    margin-left:auto;
+    margin-right: auto;
+    width:350px; 
+    height:40px;
+    text-align:center;
+    font: 11px verdana;
+
 }
