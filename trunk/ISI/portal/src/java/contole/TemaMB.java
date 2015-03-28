@@ -1,24 +1,40 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package contole;
 
-import java.io.Serializable;
-import javax.inject.Named;
-import javax.enterprise.context.Dependent;
+import java.sql.SQLException;
+import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import modelo.Tema;
+import persistencia.TemaDAO;
 
 /**
  *
  * @author Renato
  */
-@Named(value = "temaMB")
-@Dependent
-public class TemaMB implements Serializable {
+@ManagedBean
+@RequestScoped
+public class TemaMB {
 
-    private Tema tema;
+   private Tema tema;
     
-    public TemaMB() {
-        tema = new Tema();
-       this.carregarTema();
+    private TemaDAO temaDAO;
+    
+     List<Tema> temas;
+
+    public TemaMB() throws SQLException {
+        
+        temaDAO = new TemaDAO();
+      temas = temaDAO.getTodosTema();
+      tema = temas.get(0);
+    }
+    
+     public List<Tema> getTemas() {
+        return temas;
     }
 
     public Tema getTema() {
@@ -29,12 +45,8 @@ public class TemaMB implements Serializable {
         this.tema = tema;
     }
     
-    public void carregarTema(){
-    this.tema.setAutor("Cléverton");
-    this.tema.setNome("Política");
-   this.tema.setCor_fundo("#000000");
-    this.tema.setCor_titulo("#FFFFFF");
-    
+     public void pesquisar() throws SQLException{
+        tema = temaDAO.pesquisar(tema.getId());
     }
     
 }

@@ -11,10 +11,10 @@
         <h3 style="background-color:#{temaMB.tema.cor_fundo};
             color:#{temaMB.tema.cor_titulo}"> <h:outputLabel id="nome" value="#{temaMB.tema.nome}"/></h3><br/>
         <h5> <h:outputLabel id="autor" value="#{temaMB.tema.autor}"/></h5>
-        <h:form>
+        <h:form >
             
             <h:inputText id="pesquisa"/><h:button value="Pesquisar"/>
-            <h:dataTable value="#{noticiaMB.listar()}" var="item">
+            <h:dataTable value="#{noticiaMB.noticias}" var="item" border="1" >
                 
                 <h:column>
                     <f:facet name="header">Título</f:facet>
@@ -23,7 +23,7 @@
                 
                 <h:column>
                     <f:facet name="header">Texto</f:facet>
-                    #{item.noticia}
+                    #{item.texto}
                 </h:column>
                 
                 <h:column>

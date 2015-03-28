@@ -8,7 +8,7 @@ import java.util.Date;
 public class Noticia implements Serializable {
     private int id;
     private String titulo;
-    private String noticia;
+    private String texto;
     private Date data_hora;
     private String fonte;
 
@@ -29,12 +29,12 @@ public class Noticia implements Serializable {
         this.titulo = titulo;
     }
 
-    public String getNoticia() {
-        return noticia;
+    public String getTexto() {
+        return texto;
     }
 
-    public void setNoticia(String noticia) {
-        this.noticia = noticia;
+    public void setTexto(String texto) {
+        this.texto = texto;
     }
 
     public Date getData_hora() {
