@@ -7,24 +7,65 @@
         <link rel="stylesheet" type="text/css" href="tcc1.css"></link>
     </h:head>
     <h:body>
-        <div id="primeira">
-            <img src="img/logotipo.png" class="logo"/>
+         <div id="pagina">
+            <div id="primeira">
+                <img src="img/logotipo.png" class="logo"/>
+                <div id="log">
+                    <h:form>
+                        <h:outputLabel>Login</h:outputLabel><br/> 
+                        <h:inputText class="escrever"></h:inputText><br/> 
+                        <h:outputLabel>Senha</h:outputLabel><br/> 
+                        <h:inputSecret class="escrever"></h:inputSecret><br/>
+                        <h:commandButton id="btentrar" value="Entrar" class="entrar"/>
+                    </h:form>
+                </div>
+                <img src="img/capa.png" class="capa"/>
+            </div>
+
+            <div id="link">
+                <ul class="menu">
+                    <li><a href="index.xhtml" class="linkhome">Home</a></li>
+                    <li><a href="empresa.xhtml" class="linkempresa">Sobre</a></li>
+                    <li><a href="pedido.xhtml" class="linkservicos">Pedido</a></li>
+                    <li><a href="cardapio.xhtml" class="linkfotos">Cardápio</a></li>
+                    <li><a href="formulariocadastro.xhtml" class="linkcontatos">Cadastro</a></li>
+                    <li><a href="contato.xhtml" class="linkcontatos">Contato</a></li>
+                </ul>
+            </div>
         </div>
+        
+        <div id="corpo">
+            <div id="formulario">
+                
+                <form>
+                    <div id="img_form"></div>
+                    
+                    <div id="um">
+                        <label id="lab">Nome:</label>
+                        <label id="lab">E-mail:</label>
+                        <label id="lab">Fone:</label>
+                        <label id="lab">Assunto:</label>
+                        <label id="lab">Mensagem:</label>
+                    </div>
 
-        <div id="link">
-            <ul class="menu">
-                <li><a href="index.xhtml" class="linkhome">Home</a></li>
-                <li><a href="empresa.xhtml" class="linkempresa">Sobre</a></li>
-                <li><a href="pedido.xhtml" class="linkservicos">Pedido</a></li>
-                <li><a href="cardapio.xhtml" class="linkfotos">Cardápio</a></li>
-                <li><a href="formulariocadastro.xhtml" class="linkcontatos">Cadastro</a></li>
-                <li><a href="contato.xhtml">Contato</a></li>
-            </ul>
+                    <div id="dois">
+                        <input  type="text" id="nome" />
+                        <input  type="text" id="nome"/> 
+                        <input  type="text" id="nome"/>
+                        <input  type="E-mail" id="nome"/>
+                        <textarea maxlength="250"></textarea>
+
+                        <button type="button" class="botao" id="botao">Registrar</button>
+                        <button type="button" class="botao" id="botao">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+
         </div>
+        
+        
 
-        <form>
-
-        </form>
+       
 
         <div id="rodape">
             <div id="texto_rodape">Serralheria BG / Bagé-RS / Brasil, Avenida Santa Tecla 6850 
