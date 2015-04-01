@@ -1,31 +1,121 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <link href="tcc1.css" rel="stylesheet" type="text/css"/>
         <title>pedido</title>
     </h:head>
     <h:body>
-        <div id="primeira">
-            <img src="img/logotipo.png" class="logo"/>
-        </div>
+        <div id="pagina">
+            <div id="primeira">
+                <img src="img/logotipo.png" class="logo"/>
+                <div id="log">
+                    <h:form>
+                        <h:outputLabel>Login</h:outputLabel><br/> 
+                        <h:inputText class="escrever"></h:inputText><br/> 
+                        <h:outputLabel>Senha</h:outputLabel><br/> 
+                        <h:inputSecret class="escrever"></h:inputSecret><br/>
+                        <h:commandButton id="btentrar" value="Entrar" class="entrar"/>
+                    </h:form>
+                </div>
+                <img src="img/capa.png" class="capa"/>
+            </div>
 
-        <div id="link">
-            <ul class="menu">
-                <li><a href="index.xhtml" class="linkhome">Home</a></li>
-                <li><a href="empresa.xhtml" class="linkempresa">Sobre</a></li>
-                <li><a href="pedido.xhtml" class="linkservicos">Pedido</a></li>
-                <li><a href="cardapio.xhtml" class="linkfotos">Cardápio</a></li>
-                <li><a href="formulariocadastro.xhtml" class="linkcontatos">Cadastro</a></li>
-                <li><a href="contato.xhtml" class="linkcontatos">Contato</a></li>
-            </ul>
-        </div>
-        
-        
-        <div id="rodape">
-            <div id="texto_rodape">Serralheria BG / Bagé-RS / Brasil, Avenida Santa Tecla 6850 
-                contato@serralheriabg.com.br / (53)32470000 / (53)32470001 Todos os direitos reservados
+            <div id="link">
+                <ul class="menu">
+                    <li><a href="index.xhtml" class="linkhome">Home</a></li>
+                    <li><a href="empresa.xhtml" class="linkempresa">Sobre</a></li>
+                    <li><a href="pedido.xhtml" class="linkservicos">Pedido</a></li>
+                    <li><a href="cardapio.xhtml" class="linkfotos">Cardápio</a></li>
+                    <li><a href="formulariocadastro.xhtml" class="linkcontatos">Cadastro</a></li>
+                    <li><a href="contato.xhtml" class="linkcontatos">Contato</a></li>
+                </ul>
+            </div>
+
+            <div id="ped">
+
+                <h3>Faça seu pedido</h3>
+                <h:form>
+                    <div>
+                        <h4>Lanches</h4>
+
+                        <h:selectManyCheckbox layout="pageDirection">
+                            <f:selectItem itemLabel="X carne" itemValue="" />
+                            <f:selectItem itemLabel="X frango" itemValue="" />
+                            <f:selectItem itemLabel="X coração" itemValue="" />
+                            <f:selectItem itemLabel="X Calabresa" itemValue="" />
+                            <f:selectItem itemLabel="X Carne com fritas" itemValue="" />
+                            <f:selectItem itemLabel="X Peixe(filé anjo) " itemValue="" />
+                            <f:selectItem itemLabel="X Lombo" itemValue="" />
+                            <f:selectItem itemLabel="X Carne com Bacon " itemValue="" />
+                            <f:selectItem itemLabel="X Frango com Catupiri" itemValue="" />
+                            <f:selectItem itemLabel="X Frango ao molho Branco " itemValue="" />
+                            <f:selectItem itemLabel="X Vegetáriano" itemValue="" />
+                            <f:selectItem itemLabel="X Filé Mignon " itemValue="" />
+                            <f:selectItem itemLabel="X Camarão" itemValue="" />
+                            <f:selectItem itemLabel="X Filé à parmegiana" itemValue="" />
+                            <f:selectItem itemLabel="X Strogonoff" itemValue="" />
+                            <f:selectItem itemLabel="Bauru" itemValue="" />
+                            <f:selectItem itemLabel="Cachorro quente" itemValue="" />
+                            <f:selectItem itemLabel="Torradão" itemValue="" />  
+                        </h:selectManyCheckbox>
+
+                        <h:outputLabel id="lbqtd1" value="QTD" for="edqtd1"/>
+                        <h:inputText id="edqtd1" label="lbqtd1" value="" class="qtd"/>
+
+
+
+                    </div>
+
+                    <div>
+
+                        <h4>Bebidas</h4>
+                        <h:selectManyCheckbox layout="pageDirection">
+                            <f:selectItem itemLabel="H2O" itemValue="" />
+                            <f:selectItem itemLabel="Refri 600ml" itemValue="" />
+                            <f:selectItem itemLabel="Suco natural de laranja" itemValue="" />
+                            <f:selectItem itemLabel="Skol, Polar 600ml" itemValue="" />
+                            <f:selectItem itemLabel="Bohemia 600ml" itemValue="" />
+                            <f:selectItem itemLabel="Refri lata" itemValue="" />
+                            <f:selectItem itemLabel="Suco DelVale lata" itemValue="" />
+                            <f:selectItem itemLabel="Brahma shopp 600ml" itemValue="" />
+                            <f:selectItem itemLabel="Heineken 600ml " itemValue="" />
+                            <f:selectItem itemLabel="Skol, Polar, Brahma latão" itemValue="" />
+                        </h:selectManyCheckbox>
+                        <h:outputLabel id="lbqtd2" value="QTD" for="edqtd2"/>
+                        <h:inputText id="edqtd2" label="lbqtd2" value="" class="qtd"/>
+
+
+                    </div>
+
+                    <div>
+                        <h4>Pagamento</h4>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="Dinheiro" itemValue="" />
+                            <f:selectItem itemLabel="Cartão(todos)" itemValue="" />
+                        </h:selectOneMenu>
+                    </div>
+                    <h:commandButton id="btpedido" value="Fazer Pedido" class="botao"/>
+
+                    <tr>
+                        <td><input type="text" name="item1" size="60" /></td>
+                        <td><input type="text" name="quantidade1" size="10" /></td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel id="lbitem1" value="item1" for="editem1"/></td><br/>
+                        <td> <h:inputText id="editem1" label="lbitem1" value="" size="60"/></td>
+                    </tr>
+
+                </h:form>
+            </div>
+
+
+            <div id="rodape">
+                <div id="texto_rodape">Serralheria BG / Bagé-RS / Brasil, Avenida Santa Tecla 6850 
+                    contato@serralheriabg.com.br / (53)32470000 / (53)32470001 Todos os direitos reservados
+                </div>
             </div>
         </div>
     </h:body>

@@ -7,52 +7,63 @@ html{
 
     width: 100%;
     height: 100%;
-
     background-image: url("img/fundo-degrade.jpg");
     background-size: 100% 100% 100% 100%;
     background-repeat: no-repeat;
+
+}
+
+#pagina{
+    width: 100%;
+    height: 100%;  
+
 }
 
 body{
 
-
-    border-color: #c9c7c7;
-    border-style: solid;
-    width: auto;
+    width: 100%;
     height: auto;
 
 }
 
 #primeira{
-
-    border-color: black;
-    border-style: solid;
+    background-image: url("img/fundo-degrade.jpg");
+    background-size: 100% 100%;
     width: 100%;
-    height: 185px; 
-    // position: fixed;
+    height: auto; 
 }
 /*img logo*/
 .logo{
-    width: 200px;
-    height:185px;
-   
-    
+    width: 20%;
+    height:95%;
+
+
 }
 /*capa*/
 .capa{
-    width:400px;
-    height:170px;
-    margin-left: 10%
+    width:35%;
+    height:90%;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left:13%;
 }
 /*login-senha*/
 #log{
-     
-    width:200px;
-    height:130px;
-    float:right; 
-    margin-top: 30px
-}
 
+    width:14%;
+    height:12%;
+    float:right; 
+    margin-top: 4%;
+    margin-right: 3%;
+
+}
+.escrever{
+    border-radius:7px; 
+}
+.entrar{
+    border-radius:7px; 
+    margin-top: 5%;
+}
 
 
 /*inicio link*/
@@ -69,58 +80,59 @@ body{
     margin-left: 6.5%;
 
 }
-
 .menu ul{ 
     list-style: none;
 
 }
-
 .menu li{ 
     display: inline;
     float: left;
-    //padding:0px;
     margin: 0px;
     width: 15%;
-    //margin-left: auto;
-    //margin-right: auto;
+
 
 }
 .menu a{
     display: block;
     text-decoration: none;
-    padding: 10px;
-    //background-color: #ffffff;
+    padding: 5.5%;
     font-family:Verdana;
-    font-size: 14px;
+    font-size: 85%;
     font-weight: bold;
     color: black;
     background-color: yellow;
     text-align: center;
+
 }
 .menu :hover{
     color: white;
     background-color: #ba3e14;
 }
 
-/*inicio div */
+/*inicio div página home */
 #segunda{
-    background-image: url("img/slide.jpg");
+    background-image: url("img/black.jpg");
     background-size: 100% 100%;
-    border-color: black;
-    border-style: solid;
-    width: 70%;
-    height: 350px; 
+    box-shadow: 5px 10px 20px 5px black;
+    width: 71%;
+    height: 70px; 
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
+    margin-top: 1%;
+    color:white; 
 }
+
+
+
 
 #tudo{
     width: 70%;
     height: 242px; 
     margin-left: auto;
     margin-right: auto;
+
 }
+
 
 #pedido{
 
@@ -129,11 +141,11 @@ body{
     width: 28.4%;
     height: 82%;
     float: left;
-    margin:15px;
+    margin:2%;
 }
 
 #cardapio{
-    //background-image: url("img/cardapio.gif");
+
     background-size: 100% 100%;
     border-color: black;
     border-style: solid;
@@ -141,8 +153,8 @@ body{
     height: 82%;
     float: left;
     position: relative;
-    margin:15px;
-    margin-left: 20px;
+    margin:2%;
+    margin-left: 2.2%;
 }
 
 #cadastrar{
@@ -153,18 +165,27 @@ body{
     height: 82%;
     float: left;
     position: relative;
-    margin:15px;
+    margin:2.2%;
+}
+
+#futufc{
+    width: 70%;
+    height: 242px; 
+    margin-left: auto;
+    margin-right: auto;
+
+
 }
 
 #ufc{
-    background-image: url("img/slide.jpg");
+    background-image: url("img/UFC.jpg");
     background-size: 100% 100%;
     border-color: black;
     border-style: solid;
-    width: 30%;
-    height: 200px; 
-    margin-top: 10px;
-    margin-right: 18%;
+    width: 45%;
+    height: 90%; 
+    margin-top: 1%;
+    margin-right: 3%;
     float: right;
 }
 
@@ -173,52 +194,214 @@ body{
     background-size: 100% 100%;
     border-color: black;
     border-style: solid;
-    width: 30%;
-    height: 200px; 
-    margin-top: 10px;
-    margin-left: 18%;
+    width: 45%;
+    height: 90%; 
+    margin-top: 1%;
+    margin-left: 3%;
     float: left;
 }
 
-form{
-    margin-left:auto;
-    margin-right: auto;  
+/*início página sobre*/
+#historia{
     border-color: black;
     border-style: solid;
-    width: 50%;
-    height: 700px;
-    margin-top: 10%;
-    font-size: 150%;
+    width: 80%;
+    height: auto; 
+    margin-right: auto ;
+    margin-left: auto;
+    margin-top: 5%;
+
 }
+
+/*início página cardápio*/
+#card{
+
+    border-color:  activeborder;
+    border-style: solid;
+    width: 60%;
+    height: auto; 
+    margin-right: auto ;
+    margin-left: auto;
+    margin-top: 5%;
+    background-color: lightblue;
+}
+
+#bebidas{
+    border-color: activeborder;
+    border-style: solid;
+    width: 60%;
+    height: auto; 
+    margin-right: auto ;
+    margin-left: auto;
+    margin-top: 5%;
+    background-color: lightblue;
+}
+
+.preco{
+
+    width:2%;
+    background-color: lightsalmon;
+    color:aliceblue;
+
+}
+
+td{
+
+    font-size: 100%;
+    padding: 6px
+}
+
+/*início página cadastro*/
+#cadastro{
+    border-color:  activeborder;
+    border-style: solid;
+    background-color: lightblue;
+    margin-left:auto;
+    margin-right: auto;  
+    width: 50%;
+    height: auto;
+    margin-top: 5%;
+    font-size: 100%;
+    box-shadow: 5px 10px 20px 5px black;
+}
+#titulo{
+
+    margin-left: 28%   
+}
+
 
 .imput{
 
-    width: 250%;
-    height: 30px
+    width: 100%;
+    //height: 20px;
 }
 .botao{
     width: 20%;
-    height: 50px
+    height: 30px;
+    margin: 3%;
 
 }
 
+/*inicio pagina contato*/
+#corpo{
+    width: 947px;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
 
+#formulario{
+
+    width: 948px;
+    height: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 4px 1px 9px black;
+    padding-top: 7px;
+    background-image: url("img/fundo.jpg");
+    background-size: 100% 100%;
+
+}
+#img_form{
+    width: 280px;
+    height: 260px;
+    background-image: url("img/img_contato1.png");
+    background-size: 100% 100%; 
+    margin-left: 50px;
+    float:left;
+}
+#nome{
+    padding: 3px;
+    display:block;
+    margin: 10.5px;
+    width: 300px;
+    font-weight: bold;
+    font-style: italic;
+
+}
+#um{
+    margin-left: 50px;
+    margin-top: 30px;
+    width: 155px;
+    height: 245px;
+    float:left;
+}
+#lab{
+    display:block;
+    text-align:right;
+    margin: 13px;
+    font: verdana;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+}
+#dois{
+
+    margin-top: 30px;
+    margin-right:70px;
+    width: 320px;
+    height: 245px;
+    float:right;   
+}
+textarea{
+    width: 304px;
+    margin: 9px;
+    margin-top: 0px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 2px;
+}
+button{
+
+    padding: 3px;
+
+    margin-left: 10px;
+    font: 15px verdana;
+
+}
+
+#botao{
+    padding: 3px;
+
+    margin-left: 10px;
+    font: 15px verdana;
+    width:100px;
+}
+.botao:hover{
+    color: white;
+    background-color: #ba3e14;  
+}
+/*inicio pagina pedido*/
+#ped{
+
+    width: 70%;
+    height: auto;
+    border-color:  black;
+    border-style: solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+.qtd{
+
+    width: 3%
+}
 
 #rodape{
-    border-color: black;
-    border-style: solid;
+
     width:100%; 
     height:100px; 
-    margin-left:auto;
-    margin-right: auto;
-    margin-top: 350px;
-    background-image: url("img/.jpg");
-    background-size: 100% 100%;
+    //margin-left:auto;
+    //margin-right: auto;
+    margin-top:5%;
+    background-image: url("img/fundo-degrade.jpg");
+    background-size: 100% 100% 100%;
 
 }
 #texto_rodape
 {
-    //padding-top: 30px;
+    padding-top: 30px;
     margin-top:25px;
     margin-left:auto;
     margin-right: auto;
