@@ -2,7 +2,7 @@ package controle;
 
 import java.sql.SQLException;
 import java.util.List;
-import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.RequestScoped;
 import javax.inject.Named;
 import modelo.Genero;
 import modelo.Mp3;
