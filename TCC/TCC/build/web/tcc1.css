@@ -311,7 +311,7 @@ td{
     margin-left: 50px;
     float:left;
 }
-#nome{
+.nome{
     padding: 3px;
     display:block;
     margin: 10.5px;
@@ -327,7 +327,7 @@ td{
     height: 245px;
     float:left;
 }
-#lab{
+.lab{
     display:block;
     text-align:right;
     margin: 13px;

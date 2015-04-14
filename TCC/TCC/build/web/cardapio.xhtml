@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Cardápio</title>
         <link rel="stylesheet" type="text/css" href="tcc1.css"></link>
@@ -34,6 +35,29 @@
             </div>
 
             <div id="card">
+
+                <h:form>
+                    <h:dataTable var="cadprods" value="#{cadprodMB.cadprods}">
+
+                        <h:column>
+                            <f:facet name="header">
+                                Lanche
+                            </f:facet>
+                            #{cadprods.lanche}
+                        </h:column>
+                        
+                         <h:column>
+                            <f:facet name="header">
+                                Preço lanche
+                            </f:facet>
+                            #{cadprods.precolanche}
+                        </h:column>
+
+
+                    </h:dataTable>
+
+                </h:form>
+
                 <h3>LANCHES</h3>           
 
                 <table> 
@@ -120,38 +144,38 @@
                     <tr> 
                         <td><font color="red">H2O</font></td>
                         <td class="preco">R$4,50</td> 
-                         <td><font color="red">Refri lata</font> </td>
+                        <td><font color="red">Refri lata</font> </td>
                         <td class="preco">R$3,50 </td>
                     </tr> 
-                  
+
                     <tr>
                         <td><font color="red">Refri 600ml</font> </td>
                         <td class="preco">R$5,00 </td>
                         <td><font color="red">Suco DelVale lata</font> </td>
                         <td class="preco">R$4,00 </td>
                     </tr>
-                  
+
                     <tr>
                         <td><font color="red">Suco natural de laranja</font> </td>
                         <td class="preco">R$4,00 </td>
                         <td><font color="red">Brahma shopp 600ml</font> </td>
                         <td class="preco">R$7,00 </td>
                     </tr>
-                   
+
                     <tr>
                         <td><font color="red">Skol, Polar 600ml</font> </td>
                         <td class="preco">R$7,50 </td>
                         <td><font color="red">Heineken 600ml</font> </td>
                         <td class="preco">R$9,00 </td>
                     </tr>
-                    
+
                     <tr>
                         <td><font color="red">Bohemia 600ml</font> </td>
                         <td class="preco">R$9,00 </td>
                         <td><font color="red">Skol, Polar, Brahma latão</font> </td>
                         <td class="preco">R$4,50 </td>
                     </tr>
-                   
+
                 </table> 
 
             </div>

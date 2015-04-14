@@ -1,13 +1,18 @@
 
 package modelo;
 
-import java.util.Date;
-
-
+/**
+ *
+ * @author Renato
+ */
 public class Pedido {
+    
     private int numero;
-    private Date data;
-    private float valor;
+    private String lanche;
+    private int qtdlanche;
+    private String bebida;
+    private int qtdbebida;
+    private String formapagamento;
 
     public Pedido() {
     }
@@ -20,21 +25,46 @@ public class Pedido {
         this.numero = numero;
     }
 
-    public Date getData() {
-        return data;
+    public String getLanche() {
+        return lanche;
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setLanche(String lanche) {
+        this.lanche = lanche;
     }
 
-    public float getValor() {
-        return valor;
+    public int getQtdlanche() {
+        return qtdlanche;
     }
 
-    public void setValor(float valor) {
-        this.valor = valor;
+    public void setQtdlanche(int qtdlanche) {
+        this.qtdlanche = qtdlanche;
+    }
+
+    public String getBebida() {
+        return bebida;
+    }
+
+    public void setBebida(String bebida) {
+        this.bebida = bebida;
+    }
+
+    public int getQtdbebida() {
+        return qtdbebida;
+    }
+
+    public void setQtdbebida(int qtdbebida) {
+        this.qtdbebida = qtdbebida;
+    }
+
+    public String getFormapagamento() {
+        return formapagamento;
+    }
+
+    public void setFormapagamento(String formapagamento) {
+        this.formapagamento = formapagamento;
     }
     
     
 }
+

@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="tcc1.css"></link>
     </h:head>
     <h:body>
-         <div id="pagina">
+        <div id="pagina">
             <div id="primeira">
                 <img src="img/logotipo.png" class="logo"/>
                 <div id="log">
@@ -33,39 +33,43 @@
                 </ul>
             </div>
         </div>
-        
+
         <div id="corpo">
             <div id="formulario">
-                
+
                 <form>
                     <div id="img_form"></div>
-                    
+
                     <div id="um">
-                        <label id="lab">Nome:</label>
-                        <label id="lab">E-mail:</label>
-                        <label id="lab">Fone:</label>
-                        <label id="lab">Assunto:</label>
-                        <label id="lab">Mensagem:</label>
+                        <h:outputLabel id="lbnome" value="Nome" for="ednome" class="lab"/>
+                        <h:outputLabel id="lbemail" value="Email" for="edemail" class="lab"/>
+                        <h:outputLabel id="lbfone" value="Fone" for="edfone" class="lab"/>
+                        <h:outputLabel id="lbassunto" value="Assunto" for="edassunto" class="lab"/>
+                        <h:outputLabel id="lbmensagem" value="Mensagem" for="mensagem" class="lab"/>
                     </div>
 
                     <div id="dois">
-                        <input  type="text" id="nome" />
-                        <input  type="text" id="nome"/> 
-                        <input  type="text" id="nome"/>
-                        <input  type="E-mail" id="nome"/>
-                        <textarea maxlength="250"></textarea>
+                        <h:inputText id="ednome" label="lbnome" value="" class="nome"/>
+                        <h:inputText id="edemail" label="lbemail" value="" class="nome"/>
+                        <h:inputText id="edfone" label="lbfone" value="" class="nome"/>
+                        <h:inputText id="edassunto" label="lbassunto" value="" class="nome"/>
+                        <h:inputTextarea id="edmensagem" label="lbmensagem" value="" class="imput"/>
 
-                        <button type="button" class="botao" id="botao">Registrar</button>
-                        <button type="button" class="botao" id="botao">Cancelar</button>
+
+                        <!-- <button type="button" class="botao" id="botao">Registrar</button>
+                         <button type="button" class="botao" id="botao">Cancelar</button>-->
+
+                        <h:commandButton id="btCadastrar" value="Cadastrar" action="#{cadastroMB.salvar()}" class="botao"/>
+                        <h:commandButton id="btLimpar" value="Novo" action="#{cadastroMB.novo()}" class="botao"/>
                     </div>
                 </form>
             </div>
 
         </div>
-        
-        
 
-       
+
+
+
 
         <div id="rodape">
             <div id="texto_rodape">Serralheria BG / Bagé-RS / Brasil, Avenida Santa Tecla 6850 

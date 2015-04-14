@@ -42,7 +42,7 @@ public class Cadastro_pessoaDAO {
     public void salvar(Cadastro_pessoa cadastro) throws SQLException {
         //O caracter ? indica um parâmetro (valor) que será passado para a instrução.
         pstm = con.prepareStatement(
-                "insert into cadastro_usuario(cpf, numero, bairro, complemento, nome, email, telefone, endereco, senha, confirmasenha, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                "insert into cadastro_usuario(cpf, numero, bairro, complemento, nome, email, telefone, endereco, confirmasenha) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         //Aqui passamos os valores de cada um dos parâmetros, na ordem que estão na instrução
         //SQL, da esquerda para direita.
         pstm.setLong(1, cadastro.getCpf());
@@ -53,17 +53,15 @@ public class Cadastro_pessoaDAO {
         pstm.setString(6, cadastro.getEmail());
         pstm.setString(7, cadastro.getTelefone());
         pstm.setString(8, cadastro.getEndereco());
-        pstm.setString(9, cadastro.getSenha());
-        pstm.setString(10, cadastro.getConf_senha());
-        pstm.setInt(11, cadastro.getId());
-
+        //pstm.setString(9, cadastro.getSenha());
+        pstm.setString(9, cadastro.getConf_senha());
         pstm.execute();    //Após informar todos os parâmetros, mandamos executar a instrução.        
     }
 
     //O método alterar envia uma instrução UPDATE para o banco de dados PostgreSQL.
     public void alterar(Cadastro_pessoa cadastro) throws SQLException {
         pstm = con.prepareStatement(
-                "update cadastro_usuario set numero = ?, bairro = ?, complemento = ?, nome = ?, email = ?, telefone = ?, endereco =?, senha = ?, confirmasenha = ? where cpf = ?");
+                "update cadastro_usuario set numero = ?, bairro = ?, complemento = ?, nome = ?, email = ?, telefone = ?, endereco =?, confirmasenha = ?, cpf = ? where id = ?");
         pstm.setInt(1, cadastro.getNumero());
         pstm.setString(2, cadastro.getBairro());
         pstm.setString(3, cadastro.getComplemento());
@@ -71,9 +69,10 @@ public class Cadastro_pessoaDAO {
         pstm.setString(5, cadastro.getEmail());
         pstm.setString(6, cadastro.getTelefone());
         pstm.setString(7, cadastro.getEndereco());
-        pstm.setString(8, cadastro.getSenha());
-        pstm.setString(9, cadastro.getConf_senha());
-        pstm.setLong(10, cadastro.getCpf());          //Altera de acordo com o ID informado pelo usuário.
+        //pstm.setString(8, cadastro.getSenha());
+        pstm.setString(8, cadastro.getConf_senha());
+        pstm.setLong(9, cadastro.getCpf());
+        pstm.setInt(10, cadastro.getId());//Altera de acordo com o ID informado pelo usuário.
         pstm.execute();
     }
 
@@ -81,21 +80,22 @@ public class Cadastro_pessoaDAO {
     public void excluir(Cadastro_pessoa cadastro) throws SQLException {
         //Deleta o registro da tabela cujo ID é informado no parâmetro da instrução.
         pstm = con.prepareStatement(
-                "delete from cadastro_usuario where cpf = ?");
-        pstm.setLong(1, cadastro.getCpf());  //Exclui de acordo com o ID informado pelo usuário.
+                "delete from cadastro_usuario where id = ?");
+        pstm.setLong(1, cadastro.getId());  //Exclui de acordo com o ID informado pelo usuário.
         pstm.execute();
     }
 
     //O método pesquisar será utilizado para buscar um registro da tabela de MP3
     //com base no ID da música, que é a chave primária da tabela MP3.
-    public Cadastro_pessoa pesquisar(long cpf) throws SQLException {
+    public Cadastro_pessoa pesquisar(int id) throws SQLException {
         Cadastro_pessoa cadastro = null;
         //Genero genero = null;
-        pstm = con.prepareStatement("select * from cadastro_usuario where cpf = ?");
-        pstm.setLong(1, cpf);
+        pstm = con.prepareStatement("select * from cadastro_usuario where id = ?");
+        pstm.setInt(1, id);
         rs = pstm.executeQuery();
         if (rs.next()) {
             cadastro = new Cadastro_pessoa();
+            cadastro.setId(rs.getInt("id"));
             cadastro.setNumero(rs.getInt("numero"));
             cadastro.setBairro(rs.getString("bairro"));
             cadastro.setComplemento(rs.getString("complemento"));
@@ -104,7 +104,7 @@ public class Cadastro_pessoaDAO {
             cadastro.setTelefone(rs.getString("telefone"));
             cadastro.setEndereco(rs.getString("endereco"));
             cadastro.setCpf(rs.getLong("cpf"));
-            cadastro.setSenha(rs.getString("senha"));
+           // cadastro.setSenha(rs.getString("senha"));
             cadastro.setConf_senha(rs.getString("confirmasenha"));
             //genero = generoDAO.pesquisar(rs.getInt("idgenero"));
             //cadastro.setGenero(genero);
@@ -133,6 +133,7 @@ public class Cadastro_pessoaDAO {
         rs = pstm.executeQuery();  //Executa o comando select.
         while (rs.next()) {          //Percorre todas as músicas retornadas pelo select.
             cadastro = new Cadastro_pessoa();
+            cadastro.setId(rs.getInt("id"));
             cadastro.setNumero(rs.getInt("numero"));
             cadastro.setBairro(rs.getString("bairro"));
             cadastro.setComplemento(rs.getString("complemento"));
@@ -141,7 +142,7 @@ public class Cadastro_pessoaDAO {
             cadastro.setTelefone(rs.getString("telefone"));
             cadastro.setEndereco(rs.getString("endereco"));
             cadastro.setCpf(rs.getLong("cpf"));
-            cadastro.setSenha(rs.getString("senha"));
+            //cadastro.setSenha(rs.getString("senha"));
             cadastro.setConf_senha(rs.getString("confirmasenha"));
             //genero = generoDAO.pesquisar(rs.getInt("idgenero"));  //busca o objeto genero pelo id.
             //mp3.setGenero(genero); 

@@ -1,0 +1,36 @@
+body{
+    background-color: activecaption;
+    background-size: 100% 100%;
+
+}
+
+form{
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+
+}
+
+h1{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px; 
+     
+}
+
+button{
+    
+    margin-top: 10px;
+    width: 73px;
+    
+}
+
+button:hover{
+    color: red;
+}
+
+input{
+    
+     border-radius:10px;
+
+}

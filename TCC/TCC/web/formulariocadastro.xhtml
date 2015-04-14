@@ -5,6 +5,7 @@
     <h:head>
         <title>Cadastro</title>
         <link rel="stylesheet" type="text/css" href="tcc1.css"></link>
+        <script src="javascript/funcao.js" type="text/javascript"></script>
     </h:head>
     <h:body>
         <div id="pagina">
@@ -38,15 +39,14 @@
 
             <h1 id="titulo">Cadastro de cliente</h1>
 
-            <h:form>
+            <h:form prependId="false">
                 <h:inputHidden id="edIDOculto" value="#{cadastroMB.cadastro_pessoa.id}"/>
 
                 <h:panelGrid columns="4">
 
 
-                     <h:outputLabel id="lbid" value="Id" for="edid"/>
-                     <h:inputText id="edid" label="lbid" value="#{cadastroMB.cadastro_pessoa.id}" class="imput"/>
-                    
+
+
                     <h:outputLabel id="lbnome" value="Nome" for="ednome"/>
                     <h:inputText id="ednome" label="lbnome" value="#{cadastroMB.cadastro_pessoa.nome}" class="imput"/>
 
@@ -72,14 +72,17 @@
                     <h:inputText id="edemail" label="lbemail" value="#{cadastroMB.cadastro_pessoa.email}" class="imput"/>
 
                     <h:outputLabel id="lbsenha" value="Senha" for="edsenha"/>  
-                    <h:inputSecret id="edsenha" label="lbsenha" value="#{cadastroMB.cadastro_pessoa.senha}" class="imput"/>
+                    <h:inputSecret id="edsenha" label="lbsenha" value="#{cadastroMB.cadastro_pessoa.senha}"  class="imput"/>
 
-                    <h:outputLabel id="lbconfirmasenha" value="Confirme a senha" for="edemail"/>  
-                    <h:inputSecret id="edconfirmasenha" label="lbconfirmasenha" value="#{cadastroMB.cadastro_pessoa.conf_senha}" class="imput"/>
+                    <h:outputLabel id="lbconfirmasenha" value="Confirme a senha" for="edconfirmasenha"/>  
+                    <h:inputSecret id="edconfirmasenha" label="lbconfirmasenha" onblur="myFunction()"
+                                   value="#{cadastroMB.cadastro_pessoa.conf_senha}" class="imput"/>
 
                 </h:panelGrid>
                 <h:commandButton id="btCadastrar" value="Cadastrar" action="#{cadastroMB.salvar()}" class="botao"/>
                 <h:commandButton id="btLimpar" value="Novo" action="#{cadastroMB.novo()}" class="botao"/>
+                <h:outputText value="#{cadastroMB.mensagem}"  style="color: red"/>
+
             </h:form>
         </div>
 
@@ -88,7 +91,7 @@
                 contato@serralheriabg.com.br / (53)32470000 / (53)32470001 Todos os direitos reservados
             </div>
         </div>
-        <h:outputText value="#{cadastroMB.mensagem}" style="color: red"/>
+
     </h:body>
 </html>
 

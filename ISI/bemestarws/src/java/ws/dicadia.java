@@ -14,6 +14,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
+import modelo.Produto;
 
 /**
  * REST Web Service
@@ -34,6 +35,7 @@ public class dicadia {
 
     /**
      * Retrieves representation of an instance of ws.GenericResource
+     *
      * @return an instance of java.lang.String
      */
     @GET
@@ -43,19 +45,32 @@ public class dicadia {
         Gson g = new Gson();
         return g.toJson("beba muita agua");
     }
-    
+
     @GET
     @Produces("application/json")
     @Path("imc/{alt}/{peso}")
-   
-    public String getimc(@PathParam("alt")Float altura, @PathParam("peso")Float peso  ) {
-        
+
+    public String getimc(@PathParam("alt") Float altura, @PathParam("peso") Float peso) {
+
         Gson g = new Gson();
-        return g.toJson(altura * peso);
+
+        return g.toJson(peso / (altura * altura));
+    }
+
+    @GET
+    @Produces("application/json")
+    @Path("calorias/{alimento}")
+    public String getCalorias(@PathParam("alimento") String alimento) {
+        //TODO return proper representation object
+        Produto produto = new Produto();
+        produto.buscarAlimentos(alimento);
+        Gson g = new Gson();
+        return g.toJson(produto);
     }
 
     /**
      * PUT method for updating or creating an instance of GenericResource
+     *
      * @param content representation for the resource
      * @return an HTTP response with content of the updated or created resource.
      */

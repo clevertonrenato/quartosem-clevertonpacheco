@@ -1,9 +1,8 @@
-
 package modelo;
 
-
 public class Cadastro_pessoa {
-   
+
+    private int id;
     private int numero;
     private String bairro;
     private String complemento;
@@ -14,8 +13,7 @@ public class Cadastro_pessoa {
     private long cpf;
     private String senha;
     private String conf_senha;
-    private int id;
-    
+
     public Cadastro_pessoa() {
     }
 
@@ -106,6 +104,5 @@ public class Cadastro_pessoa {
     public void setCpf(long cpf) {
         this.cpf = cpf;
     }
-    
-    
+
 }
