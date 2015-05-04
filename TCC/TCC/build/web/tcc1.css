@@ -1,8 +1,4 @@
 
-/* 
-    Created on : 15/03/2015, 17:18:59
-    Author     : Renato
-*/
 html{
 
     width: 100%;
@@ -250,7 +246,39 @@ td{
     font-size: 100%;
     padding: 6px
 }
-
+.tabela{
+    
+    border: 2px solid green;
+}
+.cabecalho{
+    
+    text-align: center;
+    font: 12px arial, sans-serif;
+    font-weight:bold;
+    color: snow;
+    background: #008b45
+}
+.primeiro{
+    
+    text-align: center;
+    font: 11px arial, sans-serif;
+    
+    background: #a2cd5a
+}
+.ultimo{
+     text-align: center;
+    font: 11px arial, sans-serif;
+    
+    background: #bcee68
+    
+}
+.seg{
+    text-align: center;
+    font: 11px arial, sans-serif;
+    
+    background: #a2cd5a
+    
+}
 /*início página cadastro*/
 #cadastro{
     border-color:  activeborder;

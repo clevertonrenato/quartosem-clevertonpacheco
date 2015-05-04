@@ -1,0 +1,38 @@
+/*html{
+    width: 100%;
+    height: 100%;
+    background-image: url("img/fundo.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+
+}*/
+body{
+ 
+    width: 100%;
+    height: 500px;
+    //border-color: black;
+    //border-style: solid;
+    background-image: url("img/fundo.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#tudo{
+    width: 100%;
+    height: 100%;
+    
+    border-color: black;
+    border-style: solid;
+}
+
+#cabecalho{
+    width: 100%;
+    height: 30%;
+    //border-color: black;
+    // border-style: solid;
+     background-image: url("fundo-degrade.jpg");
+    background-size: 100% 100%;
+}
+
+

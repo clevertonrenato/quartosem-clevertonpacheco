@@ -131,6 +131,7 @@ public class PedidoDAO {
             pedido.setLanche(rs.getString("lanche"));
             pedido.setQtdlanche(rs.getInt("qtdlanche"));
             pedido.setBebida(rs.getString("bebida"));
+            
             pedido.setQtdbebida(rs.getInt("qtdbebida"));
             pedido.setFormapagamento(rs.getString("formapagamento"));
             //genero = generoDAO.pesquisar(rs.getInt("idgenero"));  //busca o objeto genero pelo id.

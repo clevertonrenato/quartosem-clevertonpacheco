@@ -97,7 +97,7 @@ public class CadastroMB {
             this.mensagem = "algum campo esta incorreto!";
         }
         informacoes = cadastroDAO.getTodosCadastro_pessoa(Cadastro_pessoaDAO.ORDEM_POR_ID);
-
+        this.novo();
     }
 
     //Este é o método que será chamado quando o usuário clicar no link

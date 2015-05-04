@@ -49,7 +49,7 @@ public class PedidoMB implements Serializable {
         pedido = new Pedido();
         pedidoDAO = new PedidoDAO();
         pedidos = pedidoDAO.getTodosPedido(PedidoDAO.ORDEM_POR_NUMERO); //Monta a lista de músicas.
-        // generoDAO = new GeneroDAO();
+         //generoDAO = new GeneroDAO();
         //generos = generoDAO.getTodosGeneros();  //Monta a lista de gêneros.
     }
 
@@ -103,7 +103,7 @@ public class PedidoMB implements Serializable {
          this.mensagem = "algum campo esta incorreto!";
          }
          pedidos = pedidoDAO.getTodosPedido(PedidoDAO.ORDEM_POR_NUMERO);
-    
+         this.novo();
     }
     //Este é o método que será chamado quando o usuário clicar no link
     //editar de uma linha do <h:dataTable>
@@ -136,11 +136,11 @@ public class PedidoMB implements Serializable {
     //a classe de controle (IndexMB) chama o método getTodosMp3() da classe
     //de persistência Mp3DAO passando como parâmetro a constante que
     //identifica a forma de ordenação (id, música, músicobanda, gênero ou ano).
-    public void ordenaPorNome() throws SQLException {
+    public void ordenaPorNumero() throws SQLException {
         pedidos = pedidoDAO.getTodosPedido(PedidoDAO.ORDEM_POR_NUMERO);
     }
 
-    public void ordenaPorCpf() throws SQLException {
+    public void ordenaPorLanche() throws SQLException {
         pedidos = pedidoDAO.getTodosPedido(PedidoDAO.ORDEM_POR_LANCHE);
     }
 

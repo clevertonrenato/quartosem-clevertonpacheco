@@ -41,26 +41,23 @@ public class Cadastro_lancheDAO {
     public void salvar(Cadastro_lanche cadprod) throws SQLException {
         //O caracter ? indica um parâmetro (valor) que será passado para a instrução.
         pstm = con.prepareStatement(
-                "insert into produto( lanche, vlanche, bebida, vbebida) values ( ?, ?, ?, ?)");
+                "insert into lanche( lanche, vlanche, itens) values (?, ?, ?)");
 
         pstm.setString(1, cadprod.getLanche());
         pstm.setFloat(2, cadprod.getPrecolanche());
-        pstm.setString(3, cadprod.getBebida());
-        pstm.setFloat(4, cadprod.getPrecobebida());
-
+        pstm.setString(3, cadprod.getItens());
         pstm.execute();    //Após informar todos os parâmetros, mandamos executar a instrução.        
     }
 
     //O método alterar envia uma instrução UPDATE para o banco de dados PostgreSQL.
     public void alterar(Cadastro_lanche Cadprod) throws SQLException {
         pstm = con.prepareStatement(
-                "update produto set  lanche = ?, vlanche = ?, bebida = ?, vbebida = ? where id = ?");
+                "update produto set  lanche = ?, vlanche = ?, itens = ? where id = ?");
 
         pstm.setString(1, Cadprod.getLanche());
         pstm.setFloat(2, Cadprod.getPrecolanche());
-        pstm.setString(3, Cadprod.getBebida());
-        pstm.setFloat(4, Cadprod.getPrecobebida());
-        pstm.setInt(5, Cadprod.getId());
+        pstm.setString(3, Cadprod.getItens());
+        pstm.setInt(4, Cadprod.getId());
         pstm.execute();
     }
 
@@ -68,7 +65,7 @@ public class Cadastro_lancheDAO {
     public void excluir(Cadastro_lanche Cadprod) throws SQLException {
         //Deleta o registro da tabela cujo ID é informado no parâmetro da instrução.
         pstm = con.prepareStatement(
-                "delete from produto where id = ?");
+                "delete from lanche where id = ?");
         pstm.setInt(1, Cadprod.getId());  //Exclui de acordo com o ID informado pelo usuário.
         pstm.execute();
     }
@@ -78,7 +75,7 @@ public class Cadastro_lancheDAO {
     public Cadastro_lanche pesquisar(int id) throws SQLException {
         Cadastro_lanche Cadprod = null;
         //Genero genero = null;
-        pstm = con.prepareStatement("select * from produto where id = ?");
+        pstm = con.prepareStatement("select * from lanche where id = ?");
         pstm.setInt(1, id);
         rs = pstm.executeQuery();
         if (rs.next()) {
@@ -86,9 +83,9 @@ public class Cadastro_lancheDAO {
             Cadprod.setId(rs.getInt("id"));
             Cadprod.setLanche(rs.getString("lanche"));
             Cadprod.setPrecolanche(rs.getFloat("vlanche"));
-            Cadprod.setBebida(rs.getString("bebida"));
-            Cadprod.setPrecobebida(rs.getFloat("vbebida"));
-            
+           // Cadprod.setBebida(rs.getString("bebida"));
+           // Cadprod.setPrecobebida(rs.getFloat("vbebida"));
+            Cadprod.setItens(rs.getString("itens"));
 
             //genero = generoDAO.pesquisar(rs.getInt("idgenero"));
             //Cadprod.setGenero(genero);
@@ -106,20 +103,20 @@ public class Cadastro_lancheDAO {
 
         switch (ordem) {
             case ORDEM_POR_ID:
-                pstm = con.prepareStatement("select * from produto order by id");
+                pstm = con.prepareStatement("select * from lanche order by id");
                 break;
-            
 
         }
 
         rs = pstm.executeQuery();  //Executa o comando select.
         while (rs.next()) {          //Percorre todas as músicas retornadas pelo select.
             Cadprod = new Cadastro_lanche();
-             Cadprod.setId(rs.getInt("id"));
+            Cadprod.setId(rs.getInt("id"));
             Cadprod.setLanche(rs.getString("lanche"));
             Cadprod.setPrecolanche(rs.getFloat("vlanche"));
-            Cadprod.setBebida(rs.getString("bebida"));
-            Cadprod.setPrecobebida(rs.getFloat("vbebida"));
+           // Cadprod.setBebida(rs.getString("bebida"));
+            //Cadprod.setPrecobebida(rs.getFloat("vbebida"));
+            Cadprod.setItens(rs.getString("itens"));
             //genero = generoDAO.pesquisar(rs.getInt("idgenero"));  //busca o objeto genero pelo id.
             //mp3.setGenero(genero); 
             Cadprods.add(Cadprod);   //Adiciona cada música na lista de músicas.

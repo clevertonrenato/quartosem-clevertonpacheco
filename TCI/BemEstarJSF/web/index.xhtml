@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h2>Bem Estar</h2>
+        <h:form>
+            <h5> <h:outputLabel id="txtFraseDia" 
+                                value="#{bemEstarMB.frasedia}"></h:outputLabel></h5>
+            <hr/>
+            Cálculo do IMC<br/>
+            Peso:<h:inputText id="txtPeso"  value="#{bemEstarMB.peso}"></h:inputText><br/>
+            Altura:<h:inputText id="txtAltura"  value="#{bemEstarMB.altura}"></h:inputText><br/>
+            <h:commandButton id="btCalcular"  value="Calcular" onclick="#{bemEstarMB.calcular()}"/>
+            <br/>
+            <h:outputLabel id="txtResultadoIMC" value="#{bemEstarMB.indice}"></h:outputLabel><br/>
+            <h:outputLabel id="indice1" value="#{bemEstarMB.indice1}"></h:outputLabel><br/>
+        </h:form>
+    </h:body>
+</html>
+

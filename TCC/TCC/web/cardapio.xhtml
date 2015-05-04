@@ -37,7 +37,8 @@
             <div id="card">
 
                 <h:form>
-                    <h:dataTable var="cadprods" value="#{cadprodMB.cadprods}">
+                    <h:dataTable var="cadprods" value="#{cadlancheMB.cadprods}" styleClass="tabela" 
+                                 headerClass="cabecalho" columnClasses="ultimo, primeiro,seg">
 
                         <h:column>
                             <f:facet name="header">
@@ -45,18 +46,29 @@
                             </f:facet>
                             #{cadprods.lanche}
                         </h:column>
-                        
-                         <h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Itens
+                            </f:facet>
+                            #{cadprods.itens}
+                        </h:column>
+
+                        <h:column>
                             <f:facet name="header">
                                 Preço lanche
                             </f:facet>
-                            #{cadprods.precolanche}
+                            <h:outputText value="#{cadprods.precolanche}">
+                                <f:convertNumber type="currency"/>
+                            </h:outputText>
                         </h:column>
 
 
                     </h:dataTable>
 
                 </h:form>
+
+
 
                 <h3>LANCHES</h3>           
 
@@ -139,6 +151,30 @@
 
             <div id="bebidas">
                 <h3>BEBIDAS</h3>
+
+                <h:form >
+
+                    <h:dataTable var="cadprods"  value="#{cadbebidaMB.cadbebidas}" border="2" styleClass="tabela">
+                        
+                       
+                            <h:column>
+                                <f:facet name="header">
+                                    Bebida
+                                </f:facet>
+                                #{cadprods.bebida}
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    Preço Bebida
+                                </f:facet>
+                                #{cadprods.precobebida}
+                            </h:column>
+                     
+                    </h:dataTable>
+
+                </h:form>
+
                 <table> 
 
                     <tr> 
