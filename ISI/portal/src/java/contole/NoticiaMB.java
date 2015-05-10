@@ -5,11 +5,17 @@
  */
 package contole;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.lang.ProcessBuilder.Redirect.Type;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import static jdk.nashorn.internal.objects.NativeJava.type;
 import modelo.Noticia;
+import modelo.WebService;
 import persistencia.NoticiaDAO;
 
 /**
@@ -32,8 +38,17 @@ private Noticia noticia;
       noticias = noticiaDAO.getTodosNoticia();
     }
     
-     public List<Noticia> getNoticias() {
-        return noticias;
+     public List<Noticia> getNoticias() throws Exception {
+         List<Noticia> lista;
+         //instanciar a classe para acessar o web service
+         WebService ws = new WebService();
+         String retorno = ws.sendGet("http://localhost:8080/PortalNoticiasWS/webresources/portal/getNoticias");
+         Gson g = new Gson();
+        
+         java.lang.reflect.Type tipo = new TypeToken<ArrayList<Noticia>>(){}.getType();
+         
+         lista = g.fromJson(retorno, tipo);
+        return lista;
     }
 
     public Noticia getNoticia() {

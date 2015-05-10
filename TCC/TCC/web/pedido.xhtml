@@ -5,7 +5,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <link href="tcc1.css" rel="stylesheet" type="text/css"/>
-        
+
 
         <title>pedido</title>
     </h:head>
@@ -41,7 +41,7 @@
                 <h3>Faça seu pedido</h3>
                 <h:form>
 
-                    <div>
+                    <div id="pedidolanche">
                         <h4>Lanches</h4>
 
 
@@ -52,11 +52,11 @@
                              <f:selectItem itemLabel="X carne" itemValue="xcarne" />
                                                       </h:selectOneMenu>-->
 
-                        <h:selectOneMenu value="#{pedidoMB.pedido.lanche}">
-                            <f:selectItems value="#{cadlancheMB.cadprods}"/>
+                        <h:selectOneMenu value="#{pedidoMB.lanche}" converter="conversorLanche">
+                            <f:selectItems value="#{cadlancheMB.cadprods}" var="lanche" itemLabel="#{lanche.lanche}" itemValue="#{lanche}"/>
                         </h:selectOneMenu>
 
-                        <h:selectOneMenu id="edqtdlanche" value="#{pedidoMB.pedido.qtdlanche}" >
+                        <h:selectOneMenu id="edqtdlanche" value="#{pedidoMB.qtd}" >
                             <f:selectItem itemLabel="0" itemValue="0" />
                             <f:selectItem itemLabel="1" itemValue="1" />
                             <f:selectItem itemLabel="2" itemValue="2" />
@@ -70,13 +70,9 @@
 
                         </h:selectOneMenu>
 
-
-
-
-
                     </div>
 
-                    <div>
+                    <div id="pedidobebida">
 
                         <h4>Bebidas</h4>
                         <h:selectOneMenu id="bebida" value="#{pedidoMB.pedido.bebida}">
@@ -112,42 +108,62 @@
 
                     </div>
 
-                    <div>
+                    <div id="formapgt">
                         <h4>Pagamento</h4>
                         <h:selectOneMenu id="edpagamento" value="#{pedidoMB.pedido.formapagamento}">
                             <f:selectItem itemLabel="Dinheiro" itemValue="dinheiro" />
                             <f:selectItem itemLabel="Cartão(todos)" itemValue="cartão" />
                         </h:selectOneMenu>
                     </div>
-                
-                      <div>
-                         
-                              <h:dataTable var="ped" value="#{pedidoMB.pedidos}" styleClass="tabela" 
-                                           headerClass="cabecalho" columnClasses="ultimo, primeiro,seg">
-  
-                                <h:column>
-                                      <f:facet name="header">
-                                          Lanche
-                                      </f:facet>
-                                      #{ped.lanche}
-                                  </h:column>
-  
-                                  <h:column>
-                                      <f:facet name="header">
-                                          Preço lanche
-                                      </f:facet>
-                                      <h:outputText value="#{cadlancheMB.cadastro_lanche.precolanche}">
-                                          <f:convertNumber type="currency"/>
-                                      </h:outputText>
-                                  </h:column> 
-  
-                              </h:dataTable>
-  
-                          
-  
-                      </div>
 
-                    <h:commandButton id="btpedido" value="Fazer Pedido" action="#{pedidoMB.salvar()}"  class="botao"/>
+                    <div id="pedlanche">
+
+                        <h:dataTable  var="ped" value="#{pedidoMB.lanches}" styleClass="tabela" 
+                                      headerClass="cabecalho" columnClasses="ultimo, primeiro,seg,terc">
+
+                            <h:column>
+                                <f:facet name="header">
+                                    Lanche
+                                </f:facet>
+                                #{ped.lanche}
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    Qtd
+                                </f:facet>
+                                #{ped.qtd}
+                            </h:column>
+
+
+                            <h:column>
+                                <f:facet name="header">
+                                    Preço Unitário (R$)
+                                </f:facet>
+                                <h:outputText value="#{ped.preco}">
+                                    <f:convertNumber type="currency"/>
+                                </h:outputText>
+                            </h:column> 
+
+                            <h:column>
+                                <f:facet name="header">
+                                    Total
+                                </f:facet>
+                                <h:outputText value="#{ped.total}">
+                                    <f:convertNumber type="currency"/>
+                                </h:outputText>
+                            </h:column> 
+
+
+
+
+                        </h:dataTable>
+
+
+
+                    </div>
+
+                    <h:commandButton id="btpedido" value="Adicionar" action="#{pedidoMB.adicionar()}"  class="botao"/>
                     <h:outputText value="#{pedidoMB.mensagem}"  style="color: red"/>
 
 

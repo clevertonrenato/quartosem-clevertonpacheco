@@ -68,12 +68,12 @@ body{
 #texto{
     box-shadow: 4px 1px 9px black;
     width: 590px;
-    height:350px;
+    height:auto;
     float:right;
     font: 12px verdana;
     background-image: url("img/fundo.jpg");
     background-size: 100% 100%;
-
+   
 }
 .h{
     text-align: center;
@@ -91,16 +91,16 @@ body{
 #imagem_empresa{
     box-shadow: 4px 1px 9px black;
     width: 320px;
-    height:350px;
+    height:360px;
     background-image: url("img/imagem_empresa.jpg");
     background-size: 100% 100%;
 }
 .texto{
     width: 530px;
-    height:250px;
+    height:auto;
     margin-left:40px;
+    margin-bottom: 20px;
    
-
 }
 #imagem_serviços{
     box-shadow: 4px 1px 9px black;
@@ -224,11 +224,11 @@ button{
 iframe{
     width: 100%;
     height: 550px;  
-    
+
 }
 
 #texto1{
-    
+
     text-align: center;
 }
 
@@ -236,7 +236,7 @@ iframe{
 #rodape{
     box-shadow: 4px 1px 9px black;
     width:100%; 
-    height:100px; 
+    height:120px; 
     margin-left:auto;
     margin-right: auto;
     margin-top: 30px;
@@ -245,14 +245,19 @@ iframe{
 }
 #texto_rodape
 {
-    padding-top: 30px;
+    padding-top: 10px;
     margin-top:25px;
     margin-left:auto;
     margin-right: auto;
-    width:350px; 
-    height:40px;
+    width:100%; 
+    height:50px;
     text-align:center;
     font: 11px verdana;
+    padding: 10px;
+}
+.rod{
+    margin-left: 20px;
+    margin-right: 20px;
 
 }
 

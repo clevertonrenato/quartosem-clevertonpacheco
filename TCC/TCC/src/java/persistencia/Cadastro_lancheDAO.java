@@ -93,6 +93,30 @@ public class Cadastro_lancheDAO {
         return Cadprod;
     }
 
+    
+    public Cadastro_lanche pesquisarPorLanche(String lanche) throws SQLException {
+        Cadastro_lanche Cadprod = null;
+        //Genero genero = null;
+        pstm = con.prepareStatement("select * from lanche where lanche = ?");
+        pstm.setString(1, lanche);
+        rs = pstm.executeQuery();
+        if (rs.next()) {
+            Cadprod = new Cadastro_lanche();
+            Cadprod.setId(rs.getInt("id"));
+            Cadprod.setLanche(rs.getString("lanche"));
+            Cadprod.setPrecolanche(rs.getFloat("vlanche"));
+           // Cadprod.setBebida(rs.getString("bebida"));
+           // Cadprod.setPrecobebida(rs.getFloat("vbebida"));
+            Cadprod.setItens(rs.getString("itens"));
+
+            //genero = generoDAO.pesquisar(rs.getInt("idgenero"));
+            //Cadprod.setGenero(genero);
+        }
+        return Cadprod;
+    }
+    
+    
+    
     //Este método é utilizado pelo IndexMB para alimentar a lista de músicas
     //que será apresentada na página index.xhtml através do componente
     //<h:dataTable>

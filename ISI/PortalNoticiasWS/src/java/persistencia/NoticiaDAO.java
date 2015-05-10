@@ -20,14 +20,11 @@ public class NoticiaDAO {
     private PreparedStatement pstm;  //Objeto utilizado para o envio de instruções SQL.  
     private ResultSet rs;            //Objeto utilizado para guardar o resultado de um SELECT.
 
-   
-
     //O construtor da classe cria os recursos necessários para manipulação de dados
     //do banco.
     public NoticiaDAO() throws SQLException {
         //Registra o conector com o banco de dados através do DriverManager.
         DriverManager.registerDriver(new org.postgresql.Driver());
-        //Aqui criamos uma conexão para o envio de instruções SQL para o PostgreSQL.
         con = DriverManager.getConnection("jdbc:postgresql://localhost/politica",
                 "postgres",
                 "postgres");

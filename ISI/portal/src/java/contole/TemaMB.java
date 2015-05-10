@@ -5,11 +5,16 @@
  */
 package contole;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import modelo.Noticia;
 import modelo.Tema;
+import modelo.WebService;
 import persistencia.TemaDAO;
 
 /**
@@ -45,8 +50,16 @@ public class TemaMB {
         this.tema = tema;
     }
     
-     public void pesquisar() throws SQLException{
-        tema = temaDAO.pesquisar(tema.getId());
+     public void pesquisar() throws SQLException, Exception{
+        
+          WebService ws = new WebService();
+         String retorno = ws.sendGet("http://localhost:8080/PortalNoticiasWS/webresources/portal/getTema");
+         Gson g = new Gson();
+        
+         java.lang.reflect.Type tipo = new TypeToken<Tema>(){}.getType();
+         
+         tema = g.fromJson(retorno, tipo);
+      
     }
     
 }

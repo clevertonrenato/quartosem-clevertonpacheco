@@ -262,22 +262,22 @@ td{
     
     text-align: center;
     font: 11px arial, sans-serif;
-    
-    background: #a2cd5a
+    background: #a2cd5a;
 }
 .ultimo{
      text-align: center;
     font: 11px arial, sans-serif;
-    
-    background: #bcee68
-    
+    background: #bcee68; 
 }
 .seg{
     text-align: center;
+    font: 11px arial, sans-serif;    
+    background: #a2cd5a;
+}
+.terc{
+    text-align: center;
     font: 11px arial, sans-serif;
-    
-    background: #a2cd5a
-    
+    background: #a2cd5a;
 }
 /*início página cadastro*/
 #cadastro{
@@ -414,6 +414,32 @@ button{
 .qtd{
 
     width: 3%
+}
+
+#pedidolanche{
+    border-color: black;
+    border-style: solid;
+}
+
+#pedidobebida{
+    border-color: black;
+    border-style: solid;
+    
+}
+
+#formapgt{
+    border-color: black;
+    border-style: solid;
+}
+#pedlanche{
+    border-color: black;
+    border-style: solid;
+    
+}
+
+#pedlanche{
+    border-color: black;
+    border-style: solid;
 }
 
 #rodape{
