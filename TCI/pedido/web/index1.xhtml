@@ -1,0 +1,62 @@
+     
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+    <html xmlns="http://www.w3.org/1999/xhtml"  
+        xmlns:ui="http://java.sun.com/jsf/facelets"  
+        xmlns:h="http://java.sun.com/jsf/html"  
+        xmlns:f="http://java.sun.com/jsf/core">  
+      
+    <ui:composition template="/templates/interna.xhtml">  
+        <ui:define name="titulo">  
+    Nova Requisição  
+    </ui:define>  
+        <ui:define name="corpo">  
+            <h:form id="cadastro">  
+                <h:messages />  
+                <br />  
+      
+      
+                <h:outputText value="Item:" />    
+                       
+                       
+                    <h:selectOneMenu id="selecioneitem" value="#{itemBean.itemm}">  
+                    <f:selectItem itemLabel="Selecione" itemValue="" />  
+                    <f:selectItems value="#{itemBean.itens}" var="itens"  
+                        itemValue="#{itens}" itemLabel="#{itens}" />  
+                </h:selectOneMenu>  
+                <h:outputLabel value="Quantidade:" for="qntsoli" />  
+                <h:inputText id="qntsoli" label="Quantidade"  
+                    value="#{requisicaoBean.qntSoli}" required="true" />  
+                           
+                           
+                    <h:commandButton action="#{tabelaNovaRequisicao.insere}"  
+                    value="Adicionar" />  
+                <br />  
+                <br />  
+                <br />  
+                <br />  
+                <h:dataTable var="#{tabelaNovaRequisicao.lista}" value="tabelaNovaRequisicao" rules="rows" cellpadding="5">  
+                    <h:column>  
+                        <f:facet name="header">Item</f:facet>  
+                        <h:outputText value="#{tabelaNovaRequisicao.novoItem}" />  
+                    </h:column>  
+                    <h:column>  
+                        <f:facet name="header">Quantidade</f:facet>  
+                        <h:outputText value="#{tabelaNovaRequisicao.quantidade}" />  
+                    </h:column>  
+                    <h:column>  
+                        <f:facet name="header">  
+                            <h:outputText value="Excluir" />  
+                        </f:facet>  
+                        <h:outputText />  
+                    </h:column>  
+                </h:dataTable>  
+                <br />  
+                <br />  
+                <br />  
+                <br />  
+                <h:commandButton action="#{requisicaoBean.salvar}" value="Salvar" />  
+      
+            </h:form>  
+        </ui:define>  
+    </ui:composition>  
+    </html>  

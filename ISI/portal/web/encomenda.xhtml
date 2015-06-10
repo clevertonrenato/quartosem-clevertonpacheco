@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+
+            <h:outputLabel id="ceporigem" value="CEP DE ORIGEM" for=""/>
+            <h:inputText id="edceporigem" label="lbceporigem" value="#{encomendaMB.origem}" />
+
+            <h:outputLabel id="cepdestino" value="CEP DE DESTINO" for=""/>
+            <h:inputText id="edcepdestino" label="lbcepdestino" value="#{encomendaMB.destino}" />
+
+            <h:outputLabel id="peso" value="PESO DA MERCADORIA" for=""/>
+            <h:inputText id="edpeso" label="lbpeso" value="#{encomendaMB.peso}" />
+
+            <h:commandButton   value="Calcular" action="#{encomendaMB.consulta()}"/>
+            <hr/>
+
+            
+                Valor frete sedex:&#160; R$<h:outputLabel id="sedex" value="#{encomendaMB.sedex}"/><br/>
+                
+                Valor frete pac:&#160;&#160;&#160;&#160;&#160; R$<h:outputLabel id="pac" value="#{encomendaMB.pac}"/><br/>
+                                   
+                Diferença:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                             <h:outputLabel id="diferenca" value="#{encomendaMB.vlrdiferenca}">
+                                                             
+                    <f:convertNumber type="currency"/>
+                </h:outputLabel>
+                
+        </h:form>
+    </h:body>
+</html>

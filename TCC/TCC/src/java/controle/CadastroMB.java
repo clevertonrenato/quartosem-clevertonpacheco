@@ -94,7 +94,7 @@ public class CadastroMB {
             this.mensagem = "cadastro realizado com susseço!";
         } else {
             cadastroDAO.alterar(cadastro);
-            this.mensagem = "algum campo esta incorreto!";
+            this.mensagem = "senhas diferentes!";
         }
         informacoes = cadastroDAO.getTodosCadastro_pessoa(Cadastro_pessoaDAO.ORDEM_POR_ID);
         this.novo();

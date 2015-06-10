@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cardápio</title>
+        <link href="estilos/tcc1.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div id="pagina">
+            <div id="primeira">
+                <img src="img/logotipo.png" class="logo"/>
+                <div id="log">
+                    <h:form>
+                        <h:outputLabel>Login</h:outputLabel><br/> 
+                        <h:inputText value="#{loginMB.usuario.email}" class="escrever"></h:inputText><br/> 
+                        <h:outputLabel>Senha</h:outputLabel><br/> 
+                        <h:inputSecret value="#{loginMB.usuario.conf_senha}" class="escrever"></h:inputSecret><br/>
+                        <h:commandButton action="#{loginMB.login()}" id="btentrar" value="Entrar" class="entrar"/>
+                        <h:commandButton value="Sair" action="#{loginMB.logout()}" class="entrar"/>
+                        <h:outputText value="#{loginMB.mensagem}" style="color: red;"/>
+                    </h:form>
+                </div>
+                <img src="img/capa.png" class="capa"/>
+            </div>
+
+            <div id="link">
+                <ul class="menu">
+                    <li><a href="index.xhtml" class="linkhome">Home</a></li>
+                    <li><a href="empresa.xhtml" class="linkempresa">Sobre</a></li>
+                    <li><a href="visao/pedido.xhtml" class="linkservicos">Pedido</a></li>
+                    <li><a href="cardapio.xhtml" class="linkfotos">Cardápio</a></li>
+                    <li><a href="formulariocadastro.xhtml" class="linkcontatos">Cadastro</a></li>
+                    <li><a href="contato.xhtml" class="linkcontatos">Contato</a></li>
+                </ul>
+            </div>
+
+            <div id="card">
+
+                <h:form>
+                    <h:dataTable var="cadprods" value="#{cadlancheMB.cadprods}" styleClass="tabela" 
+                                 headerClass="cabecalho" columnClasses="ultimo, primeiro,seg">
+
+                        <h:column>
+                            <f:facet name="header">
+                                Lanche
+                            </f:facet>
+                            #{cadprods.lanche}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Itens
+                            </f:facet>
+                            #{cadprods.itens}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Preço lanche
+                            </f:facet>
+                            <h:outputText value="#{cadprods.precolanche}">
+                                <f:convertNumber type="currency"/>
+                            </h:outputText>
+                        </h:column>
+
+
+                    </h:dataTable>
+
+                </h:form>
+
+
+
+                <h3>LANCHES</h3>           
+
+                <table> 
+                    <tr> 
+                        <td><font color="red">X Carne </font> <br/><font size="1.9px"> Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo.</font></td> 
+                        <td class="preco">R$15,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Frango</font> <br/><font size="1.9px"> Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo.</font></td> 
+                        <td class="preco">R$15,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Coração</font> <br/><font size="1.9px"> Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo.</font></td> 
+                        <td class="preco">R$16,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Calabresa</font> <br/><font size="1.9px"> Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo.</font></td> 
+                        <td class="preco">R$14,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Carne com fritas</font> <br/><font size="1.9px"> Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo.</font></td> 
+                        <td class="preco">R$16,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Peixe(filé anjo)</font> <br/><font size="1.9px"> Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo.</font></td> 
+                        <td class="preco">R$17,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Lombo</font> <br/><font size="1.9px"> Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo.</font></td> 
+                        <td class="preco">R$16,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Carne com Bacon</font> <br/><font size="1.9px"> Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo.</font></td> 
+                        <td class="preco">R$16,50</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Frango com Catupiri</font> <br/><font size="1.9px"> Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo.</font></td> 
+                        <td class="preco">R$17,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Frango ao molho Branco</font> <br/><font size="1.9px"> Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo.</font></td> 
+                        <td class="preco">R$19,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Vegetáriano</font> <br/><font size="1.9px"> Cebola, tomate, alface, palmito, azeitona, maionese, mustarda, catchup, ovo e queijo catupiry.</font></td> 
+                        <td class="preco">R$22,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Filé Mignon</font> <br/><font size="1.9px"> Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo.</font></td> 
+                        <td class="preco">R$25,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Camarão</font> <br/><font size="1.9px"> Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo.</font></td> 
+                        <td class="preco">R$28,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Filé à parmegiana</font> <br/><font size="1.9px"> Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo, , presunto e queijo ralado.</font></td> 
+                        <td class="preco">R$20,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">X Strogonoff</font> <br/><font size="1.9px"> Carne de alcatra ao molho e strogonoff, milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo,</font></td> 
+                        <td class="preco">R$19,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">Bauru</font> <br/><font size="1.9"> Filé mignon, cebola na chapa, tomate, alface, maionese, presunto, ovo e queijo.</font></td> 
+                        <td class="preco">R$23,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">Cachorro quente</font> <br/><font size="1.9px">Milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, queijo ralado e batata palha</font>.</td> 
+                        <td class="preco">R$9,00</td> 
+                    </tr> 
+                    <tr> 
+                        <td><font color="red">Torradão</font> <br/><font size="1.9px">Presunto, milho, ervilha, cebola, tomate, alface, maionese, mustarda, catchup, ovo e queijo.</font></td> 
+                        <td class="preco">R$10,00</td> 
+                    </tr> 
+                </table> 
+
+            </div>
+
+            <div id="bebidas">
+                <h3>BEBIDAS</h3>
+
+                <h:form >
+
+                    <h:dataTable var="cadprods"  value="#{cadbebidaMB.cadbebidas}" border="2" styleClass="tabela">
+                        
+                       
+                            <h:column>
+                                <f:facet name="header">
+                                    Bebida
+                                </f:facet>
+                                #{cadprods.bebida}
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    Preço Bebida
+                                </f:facet>
+                                #{cadprods.precobebida}
+                            </h:column>
+                     
+                    </h:dataTable>
+
+                </h:form>
+
+                <table> 
+
+                    <tr> 
+                        <td><font color="red">H2O</font></td>
+                        <td class="preco">R$4,50</td> 
+                        <td><font color="red">Refri lata</font> </td>
+                        <td class="preco">R$3,50 </td>
+                    </tr> 
+
+                    <tr>
+                        <td><font color="red">Refri 600ml</font> </td>
+                        <td class="preco">R$5,00 </td>
+                        <td><font color="red">Suco DelVale lata</font> </td>
+                        <td class="preco">R$4,00 </td>
+                    </tr>
+
+                    <tr>
+                        <td><font color="red">Suco natural de laranja</font> </td>
+                        <td class="preco">R$4,00 </td>
+                        <td><font color="red">Brahma shopp 600ml</font> </td>
+                        <td class="preco">R$7,00 </td>
+                    </tr>
+
+                    <tr>
+                        <td><font color="red">Skol, Polar 600ml</font> </td>
+                        <td class="preco">R$7,50 </td>
+                        <td><font color="red">Heineken 600ml</font> </td>
+                        <td class="preco">R$9,00 </td>
+                    </tr>
+
+                    <tr>
+                        <td><font color="red">Bohemia 600ml</font> </td>
+                        <td class="preco">R$9,00 </td>
+                        <td><font color="red">Skol, Polar, Brahma latão</font> </td>
+                        <td class="preco">R$4,50 </td>
+                    </tr>
+
+                </table> 
+
+            </div>
+
+            <div>
+
+            </div>
+
+
+            <div id="rodape">
+                <div id="texto_rodape">Serralheria BG / Bagé-RS / Brasil, Avenida Santa Tecla 6850 
+                    contato@serralheriabg.com.br / (53)32470000 / (53)32470001 Todos os direitos reservados
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+

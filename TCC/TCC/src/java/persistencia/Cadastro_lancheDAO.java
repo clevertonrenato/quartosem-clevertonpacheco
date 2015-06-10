@@ -41,11 +41,12 @@ public class Cadastro_lancheDAO {
     public void salvar(Cadastro_lanche cadprod) throws SQLException {
         //O caracter ? indica um parâmetro (valor) que será passado para a instrução.
         pstm = con.prepareStatement(
-                "insert into lanche( lanche, vlanche, itens) values (?, ?, ?)");
+                "insert into lanche( nome, preco, itens) values (?, ?, ?)");
 
         pstm.setString(1, cadprod.getLanche());
         pstm.setFloat(2, cadprod.getPrecolanche());
         pstm.setString(3, cadprod.getItens());
+        //pstm.setString(3, cadprod.getItens());
         pstm.execute();    //Após informar todos os parâmetros, mandamos executar a instrução.        
     }
 
@@ -136,11 +137,12 @@ public class Cadastro_lancheDAO {
         while (rs.next()) {          //Percorre todas as músicas retornadas pelo select.
             Cadprod = new Cadastro_lanche();
             Cadprod.setId(rs.getInt("id"));
-            Cadprod.setLanche(rs.getString("lanche"));
-            Cadprod.setPrecolanche(rs.getFloat("vlanche"));
+            Cadprod.setLanche(rs.getString("nome"));
+            Cadprod.setPrecolanche(rs.getFloat("preco"));
+             Cadprod.setItens(rs.getString("itens"));
            // Cadprod.setBebida(rs.getString("bebida"));
             //Cadprod.setPrecobebida(rs.getFloat("vbebida"));
-            Cadprod.setItens(rs.getString("itens"));
+           // Cadprod.setItens(rs.getString("itens"));
             //genero = generoDAO.pesquisar(rs.getInt("idgenero"));  //busca o objeto genero pelo id.
             //mp3.setGenero(genero); 
             Cadprods.add(Cadprod);   //Adiciona cada música na lista de músicas.

@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link href="tcc1.css" rel="stylesheet" type="text/css"/>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <div>
+            <h4>Lanches</h4>
+
+            <h:form>
+
+                <h:inputHidden id="edIDOculto" value="#{pedidoMB.pedido.numero}"/>
+
+
+                <h:selectOneMenu value="#{pedidoMB.pedido.lanche}">
+                    <f:selectItems value="#{cadlancheMB.cadprods}"/>
+                </h:selectOneMenu>
+
+
+
+                <h:outputLabel id="lbqtdlanche" value="QTD" for="edqtdlanche"/>
+                <h:selectOneMenu id="edqtdlanche" value="#{pedidoMB.pedido.qtdlanche}" >
+                    <f:selectItem itemLabel="0" itemValue="0" />
+                    <f:selectItem itemLabel="1" itemValue="1" />
+                    <f:selectItem itemLabel="2" itemValue="2" />
+                </h:selectOneMenu>
+
+
+
+
+                <h:dataTable var="ped" value="#{pedidoMB.pedidos}" styleClass="tabela" 
+                             headerClass="cabecalho" columnClasses="ultimo, primeiro,seg">
+
+                    <h:column>
+                        <f:facet name="header">
+                            Lanche
+                        </f:facet>
+                        #{ped.lanche}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">
+                            Preço lanche
+                        </f:facet>
+                        <h:outputText value="#{pedidoMB.pedido.vlanche}">
+                            <f:convertNumber type="currency"/>
+                        </h:outputText>
+                    </h:column> 
+
+                </h:dataTable>
+
+
+
+
+
+                <h:commandButton id="btpedido" value="Fazer Pedido" action="#{pedidoMB.salvar()}"  class="botao"/>
+                <h:outputText value="#{pedidoMB.mensagem}"  style="color: red"/>
+            </h:form>
+
+        </div>  
+    </h:body>
+</html>
+

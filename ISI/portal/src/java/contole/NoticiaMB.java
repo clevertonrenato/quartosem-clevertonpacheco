@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 import static jdk.nashorn.internal.objects.NativeJava.type;
 import modelo.Noticia;
 import modelo.WebService;
@@ -25,29 +27,59 @@ import persistencia.NoticiaDAO;
 @ManagedBean
 @RequestScoped
 public class NoticiaMB {
-private Noticia noticia;
-    
+
+    private Noticia noticia;
+
     private NoticiaDAO noticiaDAO;
-    
-     List<Noticia> noticias;
+
+    List<Noticia> noticias;
+
+    String secao;
+    String ip;
 
     public NoticiaMB() throws SQLException {
-        
-         noticia = new Noticia();        
+
+        noticia = new Noticia();
         noticiaDAO = new NoticiaDAO();
-      noticias = noticiaDAO.getTodosNoticia();
+        noticias = noticiaDAO.getTodosNoticia();
+
+        HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        secao = request.getParameter("secao");
+
+        if (secao == null) {
+            ip = "localhost";
+        } else {
+            switch (secao) {
+                case "POL":
+                    ip = "10.0.26.40";
+                    break;
+                case "OLI":
+                    ip = "10.0.131.12";
+                    break;
+                case "CLA":
+                    ip = "10.0.129.232";
+                    break;
+                case "CAR":
+                    ip = "10.0.20.110";
+                    break;
+                default:
+                    ip = "localhost";
+                    break;
+            }
+        }
     }
-    
-     public List<Noticia> getNoticias() throws Exception {
-         List<Noticia> lista;
-         //instanciar a classe para acessar o web service
-         WebService ws = new WebService();
-         String retorno = ws.sendGet("http://localhost:8080/PortalNoticiasWS/webresources/portal/getNoticias");
-         Gson g = new Gson();
-        
-         java.lang.reflect.Type tipo = new TypeToken<ArrayList<Noticia>>(){}.getType();
-         
-         lista = g.fromJson(retorno, tipo);
+
+    public List<Noticia> getNoticias() throws Exception {
+        List<Noticia> lista;
+        //instanciar a classe para acessar o web service
+        WebService ws = new WebService();
+        String retorno = ws.sendGet("http://" + ip + ":8080/PortalNoticiasWS/webresources/portal/getNoticias");
+        Gson g = new Gson();
+
+        java.lang.reflect.Type tipo = new TypeToken<ArrayList<Noticia>>() {
+        }.getType();
+
+        lista = g.fromJson(retorno, tipo);
         return lista;
     }
 
@@ -58,51 +90,47 @@ private Noticia noticia;
     public void setNoticia(Noticia noticia) {
         this.noticia = noticia;
     }
-    
-     public void pesquisar() throws SQLException{
+
+    public void pesquisar() throws SQLException {
         noticia = noticiaDAO.pesquisar(noticia.getId());
     }
-     
-    
 
-     /*  public List<Noticia> listar() throws ParseException {
+    /*  public List<Noticia> listar() throws ParseException {
 
-        List<Noticia> lista = new ArrayList<Noticia>();
+     List<Noticia> lista = new ArrayList<Noticia>();
 
-        Noticia not = new Noticia();
+     Noticia not = new Noticia();
 
      String datahora = "12-03-2015 03:10 PM";
-        DateFormat formatado = new SimpleDateFormat("dd-MM-YYYY hh:mm aa");
-        not.setData_hora(formatado.parse(datahora));
+     DateFormat formatado = new SimpleDateFormat("dd-MM-YYYY hh:mm aa");
+     not.setData_hora(formatado.parse(datahora));
 
-        not.setFonte("site G1");
-        not.setN("Gabrielli diz que era 'impossível' identificar corrupção na estatal");
-        not.setTitulo("Cpi da petrobras");
+     not.setFonte("site G1");
+     not.setN("Gabrielli diz que era 'impossível' identificar corrupção na estatal");
+     not.setTitulo("Cpi da petrobras");
 
-        //add  na lista
-        lista.add(not);
+     //add  na lista
+     lista.add(not);
 
-        not = new Noticia();
-        datahora = "13-09-2015 03:10 PM";
-        not.setData_hora(formatado.parse(datahora));
+     not = new Noticia();
+     datahora = "13-09-2015 03:10 PM";
+     not.setData_hora(formatado.parse(datahora));
 
-        not.setFonte("site G1");
-        not.setNoticia("Brasil tem base sólida contra crise, diz Dilma");
-        not.setTitulo("Presidência");
+     not.setFonte("site G1");
+     not.setNoticia("Brasil tem base sólida contra crise, diz Dilma");
+     not.setTitulo("Presidência");
 
-        lista.add(not);
+     lista.add(not);
 
-       not = new Noticia();
-        datahora = "13-09-2015 03:10 PM";
-        not.setData_hora(formatado.parse(datahora));
+     not = new Noticia();
+     datahora = "13-09-2015 03:10 PM";
+     not.setData_hora(formatado.parse(datahora));
 
-        not.setFonte("site G1");
-        not.setNoticia("Brasil tem base sólida contra crise, diz Dilma");
-        not.setTitulo("Presidência");
+     not.setFonte("site G1");
+     not.setNoticia("Brasil tem base sólida contra crise, diz Dilma");
+     not.setTitulo("Presidência");
 
-        lista.add(not);
-        return lista;
-    }*/
-
-
+     lista.add(not);
+     return lista;
+     }*/
 }

@@ -27,16 +27,15 @@ public class PedidoMB implements Serializable {
     //O mp3 é um objeto da classe Mp3 e é utilizado para apresentar dados
     //no formulário da página index.xhtml.
     private Pedido pedido;
-    
+
     private PedidoLanche pedidolanche;
 
     //o mp3DAO é um objeto da classe Mp3DAO e é utilizado pelo indexMB para
     //manipulação dos métodos de acesso a dados, tais como: salvar(), alterar(),
     //excluir() e pesquisar().
     private PedidoDAO pedidoDAO;
-    
+
     private String mensagem = "";
-    
 
     //generoDAO é um objeto da classe GeneroDAO e será usado pelo indexMB na
     //manipulação do método de pesquisa de gêneros.
@@ -46,7 +45,7 @@ public class PedidoMB implements Serializable {
     private List<PedidoLanche> lanches;
     private Cadastro_lanche lanche;
     private Integer qtd;
-    
+
     //Definimos uma lista de objetos do tipo Genero, os quais serão apresentados
     //no componentes <h:selectOneMenu> da página index.xhtml.
     //private List<Genero> generos;
@@ -60,11 +59,10 @@ public class PedidoMB implements Serializable {
         pedidoDAO = new PedidoDAO();
         lanches = new ArrayList<>();//Monta a lista de músicas.
         lanche = new Cadastro_lanche();
-         //generoDAO = new GeneroDAO();
+        //generoDAO = new GeneroDAO();
         //generos = generoDAO.getTodosGeneros();  //Monta a lista de gêneros.       
-    }    
-    
-    
+    }
+
     public List<PedidoLanche> getLanches() {
         return lanches;
     }
@@ -76,7 +74,6 @@ public class PedidoMB implements Serializable {
     public void setQtd(Integer qtd) {
         this.qtd = qtd;
     }
-    
 
     public void setLanches(List<PedidoLanche> lanches) {
         this.lanches = lanches;
@@ -89,15 +86,12 @@ public class PedidoMB implements Serializable {
     public void setLanche(Cadastro_lanche lanche) {
         this.lanche = lanche;
     }
-      
 
     public String getMensagem() {
         return this.mensagem;
     }
 
     //Este método será utilizado para retornar a lista de todos as músicas cadastradas.
-   
-
     //Este método será utilizado para retornar a lista de todos os gêneros cadastrados.
     // public List<Genero> getGeneros() {
     //   return generos;
@@ -110,7 +104,7 @@ public class PedidoMB implements Serializable {
     //do objeto mp3 presente no indexMB. Lembre-se que a vinculação é feita no
     //atributo value do componente de tela, ex: <h:inputText value="#{indexMB.id}"/>
     public Pedido getPedido() {
-        return pedido ;
+        return pedido;
     }
 
     public void setPedido(Pedido pedido) {
@@ -121,21 +115,35 @@ public class PedidoMB implements Serializable {
     //Para limpar, cria-se um novo objeto mp3 vazio.
     public void novo() {
         this.pedido = new Pedido();
-        
+
     }
 
-    //Quanto o usuário clicar no botão salvar da página index.xhtml,
-    //o indexMB (controlador) chama o método salvar() da classe mp3DAO
-    //na camada de persistência (manipulação de dados do BD), passando
-    //o objeto mp3 para que o mesmo seja inserido na tabela.
-    public void adicionar(){             
-         PedidoLanche pedidolanche = new PedidoLanche(lanche, qtd, lanche.getPrecolanche());
-         lanches.add(pedidolanche);  
-          this.mensagem = "Lanche adicionado";
-          this.novo();
+    public void salvar() throws SQLException {
+
+        //pedidoDAO.salvar(getPedido());
+
+
+        /*if (this.pedido.getNumero() == 0) {
+         pedidoDAO.salvar((Pedido) lanches);
+         this.mensagem = "Pedido enviado!";
+         } 
+         else {
+         pedidoDAO.alterar(pedido);
+         this.mensagem = "algum campo esta incorreto!";
+         }*/
+    }
+
+    public void adicionar() {
+        PedidoLanche pedidolanche = new PedidoLanche(lanche, qtd, lanche.getPrecolanche());
+        lanches.add(pedidolanche);
+        this.mensagem = "Lanche adicionado";
+        this.novo();
     }
     
-    
+    public void finalizarPedido() throws SQLException{
+        pedidoDAO.finalizarPedido(lanches, pedido.getNumero());
+    }
+
     //Este é o método que será chamado quando o usuário clicar no link
     //editar de uma linha do <h:dataTable>
     public void editar(Pedido dados) {
@@ -176,5 +184,3 @@ public class PedidoMB implements Serializable {
     }
 
 }
-
-    

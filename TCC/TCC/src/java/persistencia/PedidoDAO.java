@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.Pedido;
+import modelo.PedidoLanche;
 
 /**
  *
@@ -20,16 +21,12 @@ import modelo.Pedido;
  */
 public class PedidoDAO {
 
-    private Connection con;          //Objeto utilizado para o estabelecimento de uma conexão.
-    private PreparedStatement pstm;  //Objeto utilizado para o envio de instruções SQL.  
-    private ResultSet rs;            //Objeto utilizado para guardar o resultado de um SELECT.
-    //private GeneroDAO generoDAO;     //Objeto utilizado para pesquisar gêneros na tabela de generos.
+    private Connection con;
+    private PreparedStatement pstm;
+    private ResultSet rs;
 
     public static final int ORDEM_POR_NUMERO = 0;
     public static final int ORDEM_POR_LANCHE = 1;
-   // public static final int ORDEM_POR_MUSICOBANDA = 2;
-    //public static final int ORDEM_POR_GENERO = 3;
-    // public static final int ORDEM_POR_ANO = 4;
 
     //O construtor da classe cria os recursos necessários para manipulação de dados
     //do banco.
@@ -43,23 +40,18 @@ public class PedidoDAO {
         //generoDAO = new GeneroDAO();  //Cria uma instância de um objeto de acesso a dados a tabela de gêneros.
     }
 
-    //O método salvar envia uma instrução INSERT para o banco de dados PostgreSQL.    
-    public void salvar(Pedido pedido) throws SQLException {
-        //O caracter ? indica um parâmetro (valor) que será passado para a instrução.
-        pstm = con.prepareStatement(
-                "insert into pedido( lanche, qtdlanche, bebida, qtdbebida, formapagamento) values ( ?, ?, ?, ?, ?)");
-        //Aqui passamos os valores de cada um dos parâmetros, na ordem que estão na instrução
-        //SQL, da esquerda para direita.
-        //pstm.setInt(1, pedido.getNumero());
-        pstm.setString(1, pedido.getLanche());
-        pstm.setInt(2, pedido.getQtdlanche());
-        pstm.setString(3, pedido.getBebida());
-        pstm.setInt(4, pedido.getQtdbebida());
-        pstm.setString(5, pedido.getFormapagamento());
+    /* public void salvar(Pedido pedido) throws SQLException {
+     pstm = con.prepareStatement(
+     "insert into pedido( lanche, qtdlanche, bebida, qtdbebida, formapagamento) values ( ?, ?, ?, ?, ?)");
+     //pstm.setInt(1, pedido.getNumero());
+     pstm.setString(1, pedido.getLanche());
+     pstm.setInt(2, pedido.getQtdlanche());
+     pstm.setString(3, pedido.getBebida());
+     pstm.setInt(4, pedido.getQtdbebida());
+     pstm.setString(5, pedido.getFormapagamento());
 
-        pstm.execute();    //Após informar todos os parâmetros, mandamos executar a instrução.        
-    }
-
+     pstm.execute();    //Após informar todos os parâmetros, mandamos executar a instrução.        
+     }*/
     //O método alterar envia uma instrução UPDATE para o banco de dados PostgreSQL.
     public void alterar(Pedido pedido) throws SQLException {
         pstm = con.prepareStatement(
@@ -99,7 +91,7 @@ public class PedidoDAO {
             pedido.setBebida(rs.getString("bebida"));
             pedido.setQtdbebida(rs.getInt("qtdbebida"));
             pedido.setFormapagamento(rs.getString("formapagamento"));
-           
+
             //genero = generoDAO.pesquisar(rs.getInt("idgenero"));
             //pedido.setGenero(genero);
         }
@@ -131,14 +123,28 @@ public class PedidoDAO {
             pedido.setLanche(rs.getString("lanche"));
             pedido.setQtdlanche(rs.getInt("qtdlanche"));
             pedido.setBebida(rs.getString("bebida"));
-            
+
             pedido.setQtdbebida(rs.getInt("qtdbebida"));
             pedido.setFormapagamento(rs.getString("formapagamento"));
-            //genero = generoDAO.pesquisar(rs.getInt("idgenero"));  //busca o objeto genero pelo id.
-            //mp3.setGenero(genero); 
-            pedidos.add(pedido);   //Adiciona cada música na lista de músicas.
+            pedidos.add(pedido);
         }
         return pedidos;
+    }
+
+    //insere os produtos do carrinho no banco de dados
+
+    public void finalizarPedido(List<PedidoLanche> lanches, int idpedido) throws SQLException {
+        pstm = con.prepareStatement("insert into pedidoitens(idpedido, idlanche, idbebida, quantidade, precounitario) values ( ?, ?, ?, ?, ?)");
+        for (PedidoLanche p : lanches) {
+            //pstm.setInt(1, pedido.getNumero());
+            pstm.setInt(1, idpedido);
+            pstm.setInt(2, p.getLanche().getId());
+            pstm.setInt(3, p.getLanche().getId());
+            pstm.setInt(4, p.getQtd());
+            pstm.setFloat(5, p.getPreco());
+            pstm.execute();
+
+        }
     }
 
 }

@@ -1,0 +1,458 @@
+
+html{
+
+    width: 100%;
+    height: 100%;
+    background-image: url("img/fundo-degrade.jpg");
+    background-size: 100% 100% 100% 100%;
+    background-repeat: no-repeat;
+
+}
+
+#pagina{
+    width: 100%;
+    height: 100%;  
+
+}
+
+body{
+
+    width: 100%;
+    height: auto;
+
+}
+
+#primeira{
+    background-image: url("img/fundo-degrade.jpg");
+    background-size: 100% 100%;
+    width: 100%;
+    height: auto; 
+}
+/*img logo*/
+.logo{
+    width: 20%;
+    height:95%;
+
+
+}
+/*capa*/
+.capa{
+    width:35%;
+    height:90%;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left:13%;
+}
+/*login-senha*/
+#log{
+
+    width:14%;
+    height:12%;
+    float:right; 
+    margin-top: 4%;
+    margin-right: 3%;
+
+}
+.escrever{
+    border-radius:7px; 
+}
+.entrar{
+    border-radius:7px; 
+    margin-top: 5%;
+}
+
+
+/*inicio link*/
+#link{
+    width: 100%;
+    height:37px;
+    background-color: yellow;
+
+}
+.menu{
+    margin-top:  0px;
+    width: 90%;
+    height: 100%;
+    margin-left: 6.5%;
+
+}
+.menu ul{ 
+    list-style: none;
+
+}
+.menu li{ 
+    display: inline;
+    float: left;
+    margin: 0px;
+    width: 15%;
+
+
+}
+.menu a{
+    display: block;
+    text-decoration: none;
+    padding: 5.5%;
+    font-family:Verdana;
+    font-size: 85%;
+    font-weight: bold;
+    color: black;
+    background-color: yellow;
+    text-align: center;
+
+}
+.menu :hover{
+    color: white;
+    background-color: #ba3e14;
+}
+
+/*inicio div página home */
+#segunda{
+    background-image: url("img/black.jpg");
+    background-size: 100% 100%;
+    box-shadow: 5px 10px 20px 5px black;
+    width: 71%;
+    height: 70px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    color:white; 
+}
+
+
+
+
+#tudo{
+    width: 70%;
+    height: 242px; 
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+#pedido{
+
+    border-color: black;
+    border-style: solid;
+    width: 28.4%;
+    height: 82%;
+    float: left;
+    margin:2%;
+}
+
+#cardapio{
+
+    background-size: 100% 100%;
+    border-color: black;
+    border-style: solid;
+    width: 28.4%;
+    height: 82%;
+    float: left;
+    position: relative;
+    margin:2%;
+    margin-left: 2.2%;
+}
+
+#cadastrar{
+
+    border-color: black;
+    border-style: solid;
+    width: 28.4%;
+    height: 82%;
+    float: left;
+    position: relative;
+    margin:2.2%;
+}
+
+#futufc{
+    width: 70%;
+    height: 242px; 
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+#ufc{
+    background-image: url("img/UFC.jpg");
+    background-size: 100% 100%;
+    border-color: black;
+    border-style: solid;
+    width: 45%;
+    height: 90%; 
+    margin-top: 1%;
+    margin-right: 3%;
+    float: right;
+}
+
+#futebol{
+    background-image: url("img/brasileiro.jpg");
+    background-size: 100% 100%;
+    border-color: black;
+    border-style: solid;
+    width: 45%;
+    height: 90%; 
+    margin-top: 1%;
+    margin-left: 3%;
+    float: left;
+}
+
+/*início página sobre*/
+#historia{
+    border-color: black;
+    border-style: solid;
+    width: 80%;
+    height: auto; 
+    margin-right: auto ;
+    margin-left: auto;
+    margin-top: 5%;
+
+}
+
+/*início página cardápio*/
+#card{
+
+    border-color:  activeborder;
+    border-style: solid;
+    width: 60%;
+    height: auto; 
+    margin-right: auto ;
+    margin-left: auto;
+    margin-top: 5%;
+    background-color: lightblue;
+}
+
+#bebidas{
+    border-color: activeborder;
+    border-style: solid;
+    width: 60%;
+    height: auto; 
+    margin-right: auto ;
+    margin-left: auto;
+    margin-top: 5%;
+    background-color: lightblue;
+}
+
+.preco{
+
+    width:2%;
+    background-color: lightsalmon;
+    color:aliceblue;
+
+}
+
+td{
+
+    font-size: 100%;
+    padding: 6px
+}
+.tabela{
+
+    border: 2px solid green;
+}
+.cabecalho{
+
+    text-align: center;
+    font: 12px arial, sans-serif;
+    font-weight:bold;
+    color: snow;
+    background: #008b45
+}
+.primeiro{
+
+    text-align: center;
+    font: 11px arial, sans-serif;
+    background: #a2cd5a;
+}
+.ultimo{
+    text-align: center;
+    font: 11px arial, sans-serif;
+    background: #bcee68; 
+}
+.seg{
+    text-align: center;
+    font: 11px arial, sans-serif;    
+    background: #a2cd5a;
+}
+.terc{
+    text-align: center;
+    font: 11px arial, sans-serif;
+    background: #a2cd5a;
+}
+/*início página cadastro*/
+#cadastro{
+    border-color:  activeborder;
+    border-style: solid;
+    background-color: lightblue;
+    margin-left:auto;
+    margin-right: auto;  
+    width: 50%;
+    height: auto;
+    margin-top: 5%;
+    font-size: 100%;
+    box-shadow: 5px 10px 20px 5px black;
+}
+#titulo{
+
+    margin-left: 28%   
+}
+
+
+.imput{
+
+    width: 100%;
+    //height: 20px;
+}
+.botao{
+    width: 20%;
+    height: 30px;
+    margin: 3%;
+
+}
+
+/*inicio pagina contato*/
+#corpo{
+    width: 947px;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+#formulario{
+
+    width: 948px;
+    height: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 4px 1px 9px black;
+    padding-top: 7px;
+    background-image: url("img/fundo.jpg");
+    background-size: 100% 100%;
+
+}
+#img_form{
+    width: 280px;
+    height: 260px;
+    background-image: url("img/img_contato1.png");
+    background-size: 100% 100%; 
+    margin-left: 50px;
+    float:left;
+}
+.nome{
+    padding: 3px;
+    display:block;
+    margin: 10.5px;
+    width: 300px;
+    font-weight: bold;
+    font-style: italic;
+
+}
+#um{
+    margin-left: 50px;
+    margin-top: 30px;
+    width: 155px;
+    height: 245px;
+    float:left;
+}
+.lab{
+    display:block;
+    text-align:right;
+    margin: 13px;
+    font: verdana;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+}
+#dois{
+
+    margin-top: 30px;
+    margin-right:70px;
+    width: 320px;
+    height: 245px;
+    float:right;   
+}
+textarea{
+    width: 304px;
+    margin: 9px;
+    margin-top: 0px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 2px;
+}
+button{
+
+    padding: 3px;
+
+    margin-left: 10px;
+    font: 15px verdana;
+
+}
+
+#botao{
+    padding: 3px;
+
+    margin-left: 10px;
+    font: 15px verdana;
+    width:100px;
+}
+.botao:hover{
+    color: white;
+    background-color: #ba3e14;  
+}
+/*inicio pagina pedido*/
+#ped{
+
+    width: 70%;
+     height: auto; 
+    border-color:  black;
+    border-style: solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+
+#pedidolanche{
+    border-color: black;
+    border-style: solid;
+    width: 25%;
+    height: 30%;
+    float:left;
+    margin-left: 5%
+}
+
+#pedlanche{
+    border-color: black;
+    border-style: solid;
+    width: 28%;
+    height: auto;
+    float: left;
+    margin-left: 15%
+
+}
+
+
+#rodape{
+
+    width:100%; 
+    height:100px; 
+    //margin-left:auto;
+    //margin-right: auto;
+    margin-top:5%;
+    background-image: url("img/fundo-degrade.jpg");
+    background-size: 100% 100% 100%;
+
+}
+#texto_rodape
+{
+    padding-top: 30px;
+    margin-top:25px;
+    margin-left:auto;
+    margin-right: auto;
+    width:350px; 
+    height:40px;
+    text-align:center;
+    font: 11px verdana;
+
+}

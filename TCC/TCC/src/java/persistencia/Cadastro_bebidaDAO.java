@@ -41,7 +41,7 @@ public class Cadastro_bebidaDAO {
     public void salvar(Cadastro_bebida cadbebida) throws SQLException {
         //O caracter ? indica um parâmetro (valor) que será passado para a instrução.
         pstm = con.prepareStatement(
-                "insert into bebida( bebida, vbebida) values (?, ?)");
+                "insert into bebida( nome, preco) values (?, ?)");
 
         pstm.setString(1, cadbebida.getBebida());
         pstm.setFloat(2, cadbebida.getPrecobebida());
@@ -107,8 +107,8 @@ public class Cadastro_bebidaDAO {
         while (rs.next()) {          //Percorre todas as músicas retornadas pelo select.
             Cadbebida = new Cadastro_bebida();
             Cadbebida.setId(rs.getInt("id"));
-            Cadbebida.setBebida(rs.getString("bebida"));
-            Cadbebida.setPrecobebida(rs.getFloat("vbebida"));
+            Cadbebida.setBebida(rs.getString("nome"));
+            Cadbebida.setPrecobebida(rs.getFloat("preco"));
             //genero = generoDAO.pesquisar(rs.getInt("idgenero"));  //busca o objeto genero pelo id.
             //mp3.setGenero(genero); 
             Cadbebidas.add(Cadbebida);   //Adiciona cada música na lista de músicas.

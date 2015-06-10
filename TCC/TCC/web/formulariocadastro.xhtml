@@ -76,11 +76,11 @@
                     <h:inputSecret id="edsenha" label="lbsenha" value="#{cadastroMB.cadastro_pessoa.senha}"  class="imput"/>
 
                     <h:outputLabel id="lbconfirmasenha" value="Confirme a senha" for="edconfirmasenha"/>  
-                    <h:inputSecret id="edconfirmasenha" label="lbconfirmasenha" onblur="myFunction()"
+                    <h:inputSecret id="edconfirmasenha" label="lbconfirmasenha" 
                                    value="#{cadastroMB.cadastro_pessoa.conf_senha}" class="imput"/>
 
                 </h:panelGrid>
-                <h:commandButton id="btCadastrar" value="Cadastrar" action="#{cadastroMB.salvar()}" class="botao"/>
+                <h:commandButton id="btCadastrar" value="Cadastrar" action="#{cadastroMB.salvar()}" onfocus="myFunction()" class="botao"/>
                 <h:commandButton id="btLimpar" value="Novo" action="#{cadastroMB.novo()}" class="botao"/>
                 <h:outputText value="#{cadastroMB.mensagem}"  style="color: red"/>
 

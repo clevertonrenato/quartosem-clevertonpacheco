@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h3>Cadastro do lanche</h3>
+            <h:inputHidden id="edIDOculto" value="#{cadlancheMB.cadastro_lanche.id}"/>
+
+            <h:panelGrid columns="2">
+                <h:outputLabel id="lblanche" value="Lanche" for="edlanche"/>
+                <h:inputText id="edlanche" label="lblanche"  value="#{cadlancheMB.cadastro_lanche.lanche}"/>
+
+                <h:outputLabel id="lbitens" value="Itens" for="editens"/>
+                <h:inputText id="editens" label="lbitens"  value="#{cadlancheMB.cadastro_lanche.itens}"/>
+
+                <h:outputLabel id="lbvpanche" value="Preço do lanche" for="edplanche"/>
+                <h:inputText id="edplanche" label="lbplanche" value="#{cadlancheMB.cadastro_lanche.precolanche}">
+                    <f:convertNumber type="currency" currencySymbol="R$"/>
+                </h:inputText>
+            </h:panelGrid>
+
+            <h:commandButton id="btCadastrarlanche" value="Cadastrar" action="#{cadlancheMB.salvar()}"  class="botao"/>
+
+            <h3>Cadastro da bebida</h3>
+            <h:inputHidden id="edIDOcultob" value="#{cadbebidaMB.cadastro_bebida.id}"/>
+            
+            <h:panelGrid columns="2">
+
+                <h:outputLabel id="lbbebida" value="Bebida" for="edbebida"/>
+                <h:inputText id="edbebida" label="lbbebida" value="#{cadbebidaMB.cadastro_bebida.bebida}" />
+
+                <h:outputLabel id="lbpbebida" value="Preço da bebida" for="edpbebida"/>
+                <h:inputText id="edpbebida" label="lbpbebida" value="#{cadbebidaMB.cadastro_bebida.precobebida}" >
+                    <f:convertNumber type="currency" currencySymbol="R$"/>
+                </h:inputText>
+            </h:panelGrid>
+
+            <h:commandButton id="btCadastrarbebida" value="Cadastrar"  action="#{cadbebidaMB.salvar()}" class="botao"/>
+
+        </h:form>
+    </h:body>
+</html>
+

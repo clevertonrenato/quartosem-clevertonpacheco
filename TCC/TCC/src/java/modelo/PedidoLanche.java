@@ -15,12 +15,14 @@ public class PedidoLanche {
     private int qtd;
     private float preco;
     private float total;
+   
 
     public PedidoLanche(Cadastro_lanche lanche, int qtd, float preco) {
         this.lanche = lanche;
         this.qtd = qtd;
         this.preco = preco;
         this.total = preco * qtd;
+        
     }        
 
        

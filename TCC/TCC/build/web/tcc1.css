@@ -247,11 +247,11 @@ td{
     padding: 6px
 }
 .tabela{
-    
+
     border: 2px solid green;
 }
 .cabecalho{
-    
+
     text-align: center;
     font: 12px arial, sans-serif;
     font-weight:bold;
@@ -259,13 +259,13 @@ td{
     background: #008b45
 }
 .primeiro{
-    
+
     text-align: center;
     font: 11px arial, sans-serif;
     background: #a2cd5a;
 }
 .ultimo{
-     text-align: center;
+    text-align: center;
     font: 11px arial, sans-serif;
     background: #bcee68; 
 }
@@ -404,43 +404,35 @@ button{
 #ped{
 
     width: 70%;
-    height: auto;
+     height: auto; 
     border-color:  black;
     border-style: solid;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
 }
-.qtd{
 
-    width: 3%
-}
+
 
 #pedidolanche{
     border-color: black;
     border-style: solid;
-}
-
-#pedidobebida{
-    border-color: black;
-    border-style: solid;
-    
-}
-
-#formapgt{
-    border-color: black;
-    border-style: solid;
-}
-#pedlanche{
-    border-color: black;
-    border-style: solid;
-    
+    width: 25%;
+    height: 30%;
+    float:left;
+    margin-left: 5%
 }
 
 #pedlanche{
     border-color: black;
     border-style: solid;
+    width: 28%;
+    height: auto;
+    float: left;
+    margin-left: 15%
+
 }
+
 
 #rodape{
 

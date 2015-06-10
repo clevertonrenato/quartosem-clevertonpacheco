@@ -39,18 +39,14 @@
             <div id="ped">
 
                 <h3>Faça seu pedido</h3>
-                <h:form>
 
-                    <div id="pedidolanche">
-                        <h4>Lanches</h4>
 
+                <!--<div id="pedidolanche">-->
+
+                    <h4>Lanches</h4>
+                    <h:form>
 
                         <h:inputHidden id="edIDOculto" value="#{pedidoMB.pedido.numero}"/>
-
-
-                        <!-- <h:selectOneMenu id="lanche" value="{pedidoMB.pedido.lanche}" >
-                             <f:selectItem itemLabel="X carne" itemValue="xcarne" />
-                                                      </h:selectOneMenu>-->
 
                         <h:selectOneMenu value="#{pedidoMB.lanche}" converter="conversorLanche">
                             <f:selectItems value="#{cadlancheMB.cadprods}" var="lanche" itemLabel="#{lanche.lanche}" itemValue="#{lanche}"/>
@@ -70,9 +66,7 @@
 
                         </h:selectOneMenu>
 
-                    </div>
 
-                    <div id="pedidobebida">
 
                         <h4>Bebidas</h4>
                         <h:selectOneMenu id="bebida" value="#{pedidoMB.pedido.bebida}">
@@ -106,17 +100,25 @@
                         </h:selectOneMenu>
 
 
-                    </div>
 
-                    <div id="formapgt">
                         <h4>Pagamento</h4>
                         <h:selectOneMenu id="edpagamento" value="#{pedidoMB.pedido.formapagamento}">
                             <f:selectItem itemLabel="Dinheiro" itemValue="dinheiro" />
                             <f:selectItem itemLabel="Cartão(todos)" itemValue="cartão" />
-                        </h:selectOneMenu>
-                    </div>
+                        </h:selectOneMenu><br/><br/>
 
-                    <div id="pedlanche">
+                        <h:commandButton id="btpedido" value="Adicionar" action="#{pedidoMB.adicionar()}"  />
+                        <h:outputText value="#{pedidoMB.mensagem}"  style="color: red"/>
+
+                    </h:form>
+
+                
+
+
+
+                <div id="pedlanche">
+
+                    <h:form>
 
                         <h:dataTable  var="ped" value="#{pedidoMB.lanches}" styleClass="tabela" 
                                       headerClass="cabecalho" columnClasses="ultimo, primeiro,seg,terc">
@@ -155,20 +157,16 @@
                             </h:column> 
 
 
-
-
                         </h:dataTable>
+                        
+                        <h:commandButton id="btpedido" value="Enviar" action="#{pedidoMB.salvar()}"  />
+                        <h:outputText value=""  style="color: red"/>
+                    </h:form>
+                </div>
 
 
-
-                    </div>
-
-                    <h:commandButton id="btpedido" value="Adicionar" action="#{pedidoMB.adicionar()}"  class="botao"/>
-                    <h:outputText value="#{pedidoMB.mensagem}"  style="color: red"/>
-
-
-                </h:form>
             </div>
+
 
 
             <div id="rodape">
