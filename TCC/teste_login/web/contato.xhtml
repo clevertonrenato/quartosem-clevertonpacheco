@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Contato</title>
+        <link href="estilos/tcc1.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div id="pagina">
+            <div id="primeira">
+                <img src="img/logotipo.png" class="logo"/>
+                <div id="log">
+                   <h:form>
+                        <h:outputLabel>Login</h:outputLabel><br/> 
+                        <h:inputText value="#{loginMB.usuario.email}" class="escrever"></h:inputText><br/> 
+                        <h:outputLabel>Senha</h:outputLabel><br/> 
+                        <h:inputSecret value="#{loginMB.usuario.conf_senha}" class="escrever"></h:inputSecret><br/>
+                        <h:commandButton action="#{loginMB.login()}" id="btentrar" value="Entrar" class="entrar"/>
+                        <h:commandButton value="Sair" action="#{loginMB.logout()}" class="entrar"/>
+                        <h:outputText value="#{loginMB.mensagem}" style="color: red;"/>
+                    </h:form>
+                </div>
+                <img src="img/capa.png" class="capa"/>
+            </div>
+
+            <div id="link">
+                <ul class="menu">
+                    <li><a href="index.xhtml" class="linkhome">Home</a></li>
+                    <li><a href="empresa.xhtml" class="linkempresa">Sobre</a></li>
+                    <li><a href="visao/pedido.xhtml" class="linkservicos">Pedido</a></li>
+                    <li><a href="cardapio.xhtml" class="linkfotos">Cardápio</a></li>
+                    <li><a href="formulariocadastro.xhtml" class="linkcontatos">Cadastro</a></li>
+                    <li><a href="contato.xhtml" class="linkcontatos">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="corpo">
+            <div id="formulario">
+
+                <form>
+                    <div id="img_form"></div>
+
+                    <div id="um">
+                        <h:outputLabel id="lbnome" value="Nome" for="ednome" class="lab"/>
+                        <h:outputLabel id="lbemail" value="Email" for="edemail" class="lab"/>
+                        <h:outputLabel id="lbfone" value="Fone" for="edfone" class="lab"/>
+                        <h:outputLabel id="lbassunto" value="Assunto" for="edassunto" class="lab"/>
+                        <h:outputLabel id="lbmensagem" value="Mensagem" for="mensagem" class="lab"/>
+                    </div>
+
+                    <div id="dois">
+                        <h:inputText id="ednome" label="lbnome" value="" class="nome"/>
+                        <h:inputText id="edemail" label="lbemail" value="" class="nome"/>
+                        <h:inputText id="edfone" label="lbfone" value="" class="nome"/>
+                        <h:inputText id="edassunto" label="lbassunto" value="" class="nome"/>
+                        <h:inputTextarea id="edmensagem" label="lbmensagem" value="" class="imput"/>
+
+
+                        <!-- <button type="button" class="botao" id="botao">Registrar</button>
+                         <button type="button" class="botao" id="botao">Cancelar</button>-->
+
+                        <h:commandButton id="btCadastrar" value="Cadastrar" action="#{cadastroMB.salvar()}" class="botao"/>
+                        <h:commandButton id="btLimpar" value="Novo" action="#{cadastroMB.novo()}" class="botao"/>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+
+
+
+        <div id="rodape">
+            <div id="texto_rodape">Serralheria BG / Bagé-RS / Brasil, Avenida Santa Tecla 6850 
+                contato@serralheriabg.com.br / (53)32470000 / (53)32470001 Todos os direitos reservados
+            </div>
+        </div>
+    </h:body>
+</html>
+

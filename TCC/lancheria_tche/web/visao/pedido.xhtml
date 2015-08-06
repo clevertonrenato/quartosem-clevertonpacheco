@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link href="../estilos/tcc1.css" rel="stylesheet" type="text/css"/>
+        <title>pedido</title>
+    </h:head>
+    <h:body>
+        <div id="pagina">
+            <div id="primeira">
+                <img src="../img/logo1.png" class="logo"/>
+                <div id="log">
+                    <h:form>
+                        <h:outputLabel>Login</h:outputLabel><br/> 
+                        <h:inputText class="escrever"></h:inputText><br/> 
+                        <h:outputLabel>Senha</h:outputLabel><br/> 
+                        <h:inputSecret class="escrever"></h:inputSecret><br/>
+                        <h:commandButton id="btentrar" value="Entrar" class="entrar"/>
+                        <h:commandButton value="Sair" action="#{loginMB.logout()}" class="entrar"/>
+                    </h:form>
+                </div>
+                <img src="../img/20-anos.png" class="capa"/>
+            </div>
+
+            <div id="link">
+                <ul class="menu">
+                    <li><a href="../index.xhtml" class="linkhome">Home</a></li>
+                    <li><a href="../empresa.xhtml" class="linkempresa">Sobre</a></li>
+                    <li><a href="../visao/pedido.xhtml" class="linkservicos">Pedido</a></li>
+                    <li><a href="../cardapio.xhtml" class="linkfotos">Cardápio</a></li>
+                    <li><a href="../formulariocadastro.xhtml" class="linkcontatos">Cadastro</a></li>
+                    <li><a href="../contato.xhtml" class="linkcontatos">Contato</a></li>
+                </ul>
+            </div>
+
+            <div id="ped">
+
+                <h2>Bem vindo #{loginMB.usuario.nome} Faça seu pedido</h2>
+
+                <div id="pedidolanche">
+
+                    <h:form>
+
+                        <h:inputHidden id="edIDOculto" value="#{pedidoMB.pedido.numero}"/>
+
+                        <h:panelGrid columns="2">
+
+                            <h:outputLabel>Produtos</h:outputLabel>
+                            <h:selectOneMenu value="#{pedidoMB.idProduto}">
+                                <f:selectItems var="produto" value="#{cadprodutoMB.cadprods}" itemLabel="#{produto.lanche}" itemValue="#{produto.id}"/>
+                            </h:selectOneMenu>
+
+                            <h:outputLabel>Quantidade</h:outputLabel>
+                            <h:selectOneMenu id="edqtdlanche" value="#{pedidoMB.quantidade}" >
+                                <f:selectItem itemLabel="1" itemValue="1" />
+                                <f:selectItem itemLabel="2" itemValue="2" />
+                                <f:selectItem itemLabel="3" itemValue="3" />
+                                <f:selectItem itemLabel="4" itemValue="4" />
+                                <f:selectItem itemLabel="5" itemValue="5" />
+                                <f:selectItem itemLabel="6" itemValue="6" />
+                                <f:selectItem itemLabel="7" itemValue="7" />
+                                <f:selectItem itemLabel="8" itemValue="8" />
+                                <f:selectItem itemLabel="9" itemValue="9" />
+                            </h:selectOneMenu>   
+
+                            <h:outputLabel>Observação</h:outputLabel>
+                            <h:inputTextarea id="edobs" label="lbobs" value="#{pedidoMB.observacao}"/>
+                        </h:panelGrid>
+
+                        <h:commandButton id="btpedido" value="Adicionar" action="#{pedidoMB.adicionarItem()}" class="botao" >
+                        </h:commandButton>
+
+
+                    </h:form>
+
+                </div>
+
+
+
+                <div id="pedlanche">
+
+                    <h:form>
+
+                        <h:dataTable  var="ped" value="#{pedidoMB.pedido.pedidoitem}" styleClass="tabela" 
+                                      headerClass="cabecalho" columnClasses="ultimo, primeiro,seg,terc,quarto">
+
+                            <h:column>
+                                <f:facet name="header">
+                                    Lanche/Bebida
+                                </f:facet>
+                                #{ped.produto.lanche}
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    Qtd
+                                </f:facet>
+                                #{ped.quantidade}
+                            </h:column>
+
+
+                            <h:column>
+                                <f:facet name="header">
+                                    Preço Unitário (R$)
+                                </f:facet>
+                                <h:outputText value="#{ped.unitario}">
+                                    <f:convertNumber type="currency"/>
+                                </h:outputText>
+                            </h:column> 
+
+                            <h:column>
+                                <f:facet name="header">
+                                    Observação
+                                </f:facet>
+                                <h:outputText value="#{ped.observacao}"/>
+                            </h:column> 
+
+
+                            <h:column>
+                                <h:commandLink value="Excluir"
+                                               onclick="return confirm('Deseja realmente excluir?')"
+                                               action="#{pedidoMB.excluirItemCarrinho(ped)}"/>                    
+                            </h:column>  
+
+
+                        </h:dataTable>
+
+                        <h:commandButton id="btpedido" value="Enviar Pedido" action="#{pedidoMB.salvar()}"  />
+                        <h:outputText value=""  style="color: red"/>
+
+                        Total Pedido: <h:outputText style="color: red" value="#{pedidoMB.pedido.total}">
+                            <f:convertNumber type="currency"/>
+                        </h:outputText><br/> 
+                        <h:outputText value="#{pedidoMB.mensagem}"  style="color: red"/>
+
+                    </h:form>
+                </div>
+
+
+            </div>
+
+
+
+            <div id="rodape">
+                <div id="texto_rodape">Lancheria Querência / Bagé-RS / Brasil, Avenida Santa Tecla 6850 
+                    contato@tchelanches.com.br / (53)32470000 / (53)32470001 Todos os direitos reservados
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,273 @@
+
+body{
+
+    width: 99%;
+    height: auto;
+    // border-color: black;
+    // border-style: solid;
+    background-image: url("../img/bg.jpg");
+    background-repeat: repeat-x;
+}
+#primeira{
+    width: 80%;
+    height: 430px; 
+    background-image: url(../img/header_bg.jpg);
+    background-repeat: repeat-x;
+    -webkit-border-radius:15px;
+    border-radius:15px;
+    -moz-box-shadow:0px 0px 2px #000;
+    -webkit-box-shadow:0px 0px 2px #000;
+    box-shadow:0px 0px 2px #000;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    padding-top: 0em;
+    padding-right: 4em;
+    padding-bottom: 1em;
+    padding-left: 4em;
+    -moz-border-radius-bottomleft: 50px;
+    -moz-border-radius-topright: 50px;
+    margin-top: 30px;
+    border: 10px solid #FFFFFF;
+    box-shadow: 0 45px 60px -50px #000000;
+}
+#logo {
+    float: left;
+    height: 100px;
+    width: 150px;
+    margin-left: -30px;
+    background-image: url(../img/logo.jpg);
+    background-size: 100% 100%;
+}
+h2 {
+    font-size: 24px;
+    //text-shadow: -1px 1px  #CCC;
+}
+h3{
+    text-align: center;
+}
+.imgcabecalho{
+
+    background-image: url(../img/adesivo.jpg);
+    background-size: 100% 100%;
+    float: right;
+    height: 310px;
+    width: 700px;
+    box-shadow:0px 0px 2px #000000;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+}
+#segunda{
+    width: 70%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background-color: #FBFAF5;
+    padding: 15px;
+    border: 10px solid #FFFFFF;   
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    -moz-box-shadow:0px 0px 2px #000000;
+    -webkit-box-shadow:0px 0px 2px #000000;
+    box-shadow:0px 0px 2px #000000;
+    box-shadow: 0 45px 60px -50px #000000;
+    margin-bottom: 30px;
+}
+.navbutton {
+    background: #e6b22e;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f2a218), to(#e6b22e));
+    background: -webkit-linear-gradient(top, #f2a218, #e6b22e);
+    background: -moz-linear-gradient(top, #f2a218, #e6b22e);
+    background: -ms-linear-gradient(top, #f2a218, #e6b22e);
+    background: -o-linear-gradient(top, #f2a218, #e6b22e);
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: #333333;
+    font-size: 14px;
+    font-family: "trebuchet MS";
+    text-decoration: none;
+    padding-top: 6px;
+    padding-right: 12px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    width: 115px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    float: right;
+    font-variant: small-caps;
+    margin-left: 5px;
+    margin-right: 5px;
+    -moz-border-radius-bottomleft: 20px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #FFCC00;
+    letter-spacing: 0.5px;
+    -moz-border-radius-topright: 20px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topleft: 5px;
+}
+#login {
+    float: left;
+    height: 120px;
+    width: 200px;
+    margin-top: 40px;
+    margin-left: -150px;
+
+}
+footer {
+    width: 940px;
+    height: 80px;
+    background-repeat: repeat-x;
+    //float: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1px;
+    background-color: #FFFFFF;
+    -moz-border-radius: 15px;
+    -webkit-box-shadow: inset 1px 1px 2px 12px rgba(11, 2, 11, 0.1);
+    -moz-box-shadow: inset 1px 1px 2px 12px rgba(11, 2, 11, 0.1);
+    box-shadow: inset 1px 1px 2px 12px rgba(11, 2, 11, 0.1);
+    //padding-left: 20px;
+}
+footer  span {
+    float: left;
+    height: 15px;
+    width: 120px;
+    margin-top: 25px;
+    margin-left: 65px;
+    font-family: "trebuchet MS";
+    font-size: 18px;
+    font-weight: bold;
+    color: #FF9900;
+}
+
+#formulario{
+
+    width: 948px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 7px;
+
+
+}
+#um{
+    margin-right: 150px;
+    margin-top: 30px;
+    width: 330px;
+    height: 400px;
+    float:right;
+    box-shadow:  1px 3px 9px black;
+}
+#lab{
+    display:block;
+    margin: 8px;
+    font: verdana;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+
+}
+
+#imput{
+    padding: 3px;
+    display:block;
+    margin: 10.5px;
+    width: 300px;
+    font-weight: bold;
+    font-style: italic;
+
+}
+textarea{
+    width: 304px;
+    margin: 9px;
+    margin-top: 0px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 2px;
+}
+button{
+
+    padding: 3px;
+    width: 147.5px;
+    margin-left: 10px;
+    font: 18px verdana;
+
+}
+.botao:hover{
+    color: white;
+    background-color: #ba3e14;  
+}
+#img_form{
+    width: 280px;
+    height: 260px;
+    background-image: url("../img/img_contato1.png");
+    background-size: 100% 100%; 
+    margin-left: 50px;
+    float:left;
+
+}
+#img_formcad{
+    width: 280px;
+    height: 260px;
+    background-image: url("../img/cadastro.png");
+    background-size: 100% 100%; 
+    margin-left: 50px;
+    margin-top: 100px;
+    float:left;
+
+}
+#cadum{
+    //margin-left: auto;
+    margin-right: 100px;
+    margin-top: 30px;
+    width: 330px;
+    height: 840px;
+    float:right;
+    box-shadow:  1px 3px 9px black;
+}
+
+#formulariocad{
+
+    width: 90%;
+    height: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 7px;
+    // border-color: black;
+    // border-style: solid;
+
+}
+#labcad{
+    display:block;
+    // text-align:right;
+    margin: 8px;
+    font: verdana;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 3.2px;
+}
+#imagem{
+    width: 940px;
+    height: 500px;
+
+}
+#divide{
+
+    width: 940px;
+    height: 30px;
+}
+#h2img{
+    text-align: center;
+}
+#imgindex{
+    width: 465.4px;
+    height: 200px;
+}

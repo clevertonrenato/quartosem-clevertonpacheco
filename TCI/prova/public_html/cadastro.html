@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="estilos/prova.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <section id="primeira">
+            <div id="logo"></div>
+            <h2>&#160;&#160Conheça o mundo</h2> 
+            <nav>
+                <div class="navbutton"><a href="contato.html">contatos </a></div>
+                <div class="navbutton"><a href="cadastro.html">Cadastre-se</a></div>
+                <div class="navbutton"><a href="imagens.html">Imagens </a></div>
+                <div class="navbutton"><a href="agencia.html">A agência </a></div>
+                <div class="navbutton"><a href="index.html">Home </a></div>           
+            </nav> 
+            <div class="imgcabecalho"></div>
+            <div id="login">
+                <form>
+                    <label>Login:</label> 
+                    <input type="text" name="username" size="15" required/><br /><br />
+                    <label>Senha:</label> 
+                    <input type="password" name="passwort" size="15" required/><br />
+                    <div align="center">
+                        <br /><input type="submit" value="Login" />
+                        <input type="submit" value="Sair" />
+                    </div>
+                </form>
+
+            </div>
+        </section>
+        <section id="segunda">
+            <nav id="formulariocad">
+                <h2 id="h2img">Cadastre-se e confira nossas promoções</h2>
+                <div id="img_formcad"></div>
+                <form id="cadum">
+                    <label id="labcad">Nome:</label>
+                    <input  type="text" id="imput" required/>
+
+                    <label id="labcad">CPF:</label>
+                    <input name="cpf" title="Inclua o CPF" required pattern="\d{9}-?\d{2}" id="imput"/>
+
+                    <label id="labcad" >Data Nascimento:</label>
+                    <input  type="date" id="imput" required/>
+
+                    <label id="labcad">Endereço:</label>
+                    <input  type="text" id="imput" required/>
+
+                    <label id="labcad">Número:</label>
+                    <input  type="number" step="1" min="0" max="10" id="imput" required/>
+
+                    <label id="labcad">Complemento:</label>
+                    <input  type="text" id="imput" required/>
+
+                    <label id="labcad">Bairro:</label>
+                    <input  type="text" id="imput" required/>
+
+                    <label id="labcad">Telefone:</label>
+                    <input  type="tel" id="imput" required/>
+
+                    <label id="labcad">Email:</label>
+                    <input name="email" type="email"  id="imput" required/>
+
+                    <label id="labcad">Senha:</label>
+                    <input  type="text" maxlength="8" placeholder="Máximo oito caracteres" id="imput" required/>
+
+                    <label id="labcad">Confirme a senha:</label>
+                    <input  type="text" id="imput" required/>
+
+                    <button type="submit" class="botao">Registrar</button>
+                    <button type="submit" class="botao">Cancelar</button>
+                </form>
+
+            </nav>
+            <footer>     
+                <span><a href="index.html">Home</a></span> <span><a href="agencia.html">A agência </a> </span> <span><a href="imagens.html">Imagens</a></span>  <span><a href="cadastro.html">Cadastre-se</a></span> <span><a href="contato.html">Contatos</a></span>    
+
+            </footer> 
+        </section>
+
+    </body>
+</html>

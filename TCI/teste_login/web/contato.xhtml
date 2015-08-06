@@ -11,7 +11,7 @@
             <div id="primeira">
                 <img src="img/logotipo.png" class="logo"/>
                 <div id="log">
-                   <h:form>
+                    <h:form>
                         <h:outputLabel>Login</h:outputLabel><br/> 
                         <h:inputText value="#{loginMB.usuario.email}" class="escrever"></h:inputText><br/> 
                         <h:outputLabel>Senha</h:outputLabel><br/> 
@@ -39,32 +39,32 @@
         <div id="corpo">
             <div id="formulario">
 
-                <form>
-                    <div id="img_form"></div>
 
-                    <div id="um">
-                        <h:outputLabel id="lbnome" value="Nome" for="ednome" class="lab"/>
-                        <h:outputLabel id="lbemail" value="Email" for="edemail" class="lab"/>
-                        <h:outputLabel id="lbfone" value="Fone" for="edfone" class="lab"/>
-                        <h:outputLabel id="lbassunto" value="Assunto" for="edassunto" class="lab"/>
-                        <h:outputLabel id="lbmensagem" value="Mensagem" for="mensagem" class="lab"/>
-                    </div>
-
-                    <div id="dois">
-                        <h:inputText id="ednome" label="lbnome" value="" class="nome"/>
-                        <h:inputText id="edemail" label="lbemail" value="" class="nome"/>
-                        <h:inputText id="edfone" label="lbfone" value="" class="nome"/>
-                        <h:inputText id="edassunto" label="lbassunto" value="" class="nome"/>
-                        <h:inputTextarea id="edmensagem" label="lbmensagem" value="" class="imput"/>
-
-
-                        <!-- <button type="button" class="botao" id="botao">Registrar</button>
-                         <button type="button" class="botao" id="botao">Cancelar</button>-->
-
-                        <h:commandButton id="btCadastrar" value="Cadastrar" action="#{cadastroMB.salvar()}" class="botao"/>
-                        <h:commandButton id="btLimpar" value="Novo" action="#{cadastroMB.novo()}" class="botao"/>
-                    </div>
-                </form>
+                <div id="img_form"></div>
+                <!-- <form>
+                                    <div id="um">
+                                        <h:outputLabel id="lbnome" value="Nome" for="ednome" class="lab"/>
+                                        <h:outputLabel id="lbemail" value="Email" for="edemail" class="lab"/>
+                                        <h:outputLabel id="lbfone" value="Fone" for="edfone" class="lab"/>
+                                        <h:outputLabel id="lbassunto" value="Assunto" for="edassunto" class="lab"/>
+                                        <h:outputLabel id="lbmensagem" value="Mensagem" for="mensagem" class="lab"/>
+                                    </div>
+                
+                                    <div id="dois">
+                                        <h:inputText id="ednome" label="lbnome" value="" class="nome"/>
+                                        <h:inputText id="edemail" label="lbemail" value="" class="nome"/>
+                                        <h:inputText id="edfone" label="lbfone" value="" class="nome"/>
+                                        <h:inputText id="edassunto" label="lbassunto" value="" class="nome"/>
+                                        <h:inputTextarea id="edmensagem" label="lbmensagem" value="" class="imput"/>
+                
+                
+                                         <button type="button" class="botao" id="botao">Registrar</button>
+                                         <button type="button" class="botao" id="botao">Cancelar</button>
+                
+                                        <h:commandButton id="btCadastrar" value="Cadastrar"  class="botao"/>
+                                        <h:commandButton id="btLimpar" value="Novo"  class="botao"/>
+                                    </div>
+                                </form>-->
             </div>
 
         </div>

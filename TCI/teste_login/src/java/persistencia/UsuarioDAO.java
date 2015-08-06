@@ -97,12 +97,13 @@ public class UsuarioDAO extends Conexao {
         return usuarios;
     }
 
-    public boolean verificaLogin(Cadastro_pessoa usuario) throws SQLException {
+    public Cadastro_pessoa verificaLogin(Cadastro_pessoa usuario) throws SQLException {
         Cadastro_pessoa usr = this.getUsuarioPorLogin(usuario.getEmail());
         if (usr != null && usr.getConf_senha().equals(usuario.getConf_senha())) {
-            return true;
+            
+            return usr;
         }
-        return false;
+        return null;
     }
     
    /*  public List<Usuario> getTodosCadastro_pessoa(int ordem) throws SQLException {

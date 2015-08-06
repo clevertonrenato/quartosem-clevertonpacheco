@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastro</title>
+        <link href="estilos/tcc1.css" rel="stylesheet" type="text/css"/>
+        <script src="javascript/funcao.js" type="text/javascript"></script>
+        <script src="javascript/validarCpf.js" type="text/javascript"></script>
+        <script src="javascript/validarform.js" type="text/javascript"></script>
+    </h:head>
+    <h:body>
+       
+        <div id="pagina">
+            <div id="primeira">
+                <img src="img/logo1.png" class="logo"/>
+                <div id="log">
+                    <h:form>                    
+                        <h:outputLabel>Login</h:outputLabel><br/> 
+                        <h:inputText value="#{loginMB.usuario.email}" class="escrever"></h:inputText><br/> 
+                        <h:outputLabel>Senha</h:outputLabel><br/> 
+                        <h:inputSecret value="#{loginMB.usuario.conf_senha}" class="escrever"></h:inputSecret><br/>
+                        <h:commandButton action="#{loginMB.login()}" id="btentrar" value="Entrar" class="entrar"/>
+                        <h:commandButton value="Sair" action="#{loginMB.logout()}" class="entrar"/>
+                        <h:outputText value="#{loginMB.mensagem}" style="color: red;"/>
+                    </h:form>
+                </div>
+                <img src="img/20-anos.png" class="capa"/>
+            </div>
+
+            <div id="link">
+                <ul class="menu">
+                    <li><a href="index.xhtml" class="linkhome">Home</a></li>
+                    <li><a href="empresa.xhtml" class="linkempresa">Sobre</a></li>
+                    <li><a href="visao/pedido.xhtml" class="linkservicos">Pedido</a></li>
+                    <li><a href="cardapio.xhtml" class="linkfotos">Cardápio</a></li>
+                    <li><a href="formulariocadastro.xhtml" class="linkcontatos">Cadastro</a></li>
+                    <li><a href="contato.xhtml" class="linkcontatos">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="cadastro">
+
+            <h1 id="titulo">Cadastro de cliente</h1>
+
+            <h:form prependId="false" id="form1">
+                <h:inputHidden id="edIDOculto" value="#{cadastroMB.cadastro_pessoa.id}"/>
+
+                <h:panelGrid columns="4">
+
+
+
+
+                    <h:outputLabel id="lbnome" value="Nome" for="ednome" class="labcad"/>
+                    <h:inputText id="ednome" label="lbnome" value="#{cadastroMB.cadastro_pessoa.nome}" onblur="tiracor()" class="imput"/>
+
+                    <h:outputLabel id="lbcpf" value="CPF" for="edcpf" class="labcad"/>
+                    <h:inputText id="edcpf" label="lbcpf" value="#{cadastroMB.cadastro_pessoa.cpf}" onfocus="validaCPF('cpf');" onblur="tiracor()" class="imput"/>
+
+                    <h:outputLabel id="lbendereco" value="Endereço" for="edendereco" class="labcad"/>
+                    <h:inputText id="edendereco" label="lbendereco" value="#{cadastroMB.cadastro_pessoa.endereco}" onblur="tiracor()" class="imput"/>
+
+                    <h:outputLabel id="lbnumero" value="Número" for="ednumero" class="labcad"/>
+                    <h:inputText id="ednumero" label="lbnumero" value="#{cadastroMB.cadastro_pessoa.numero}" onblur="tiracor()" class="imput"/>
+
+                    <h:outputLabel id="lbcomplemento" value="Complemento" for="edcomplemento" class="labcad"/>
+                    <h:inputText id="edcomplemento" label="lbcomplemento" value="#{cadastroMB.cadastro_pessoa.complemento}" onblur="tiracor()" class="imput"/>
+
+                    <h:outputLabel id="lbbairro" value="bairro" for="edbairro" class="labcad"/>
+                    <h:inputText id="edbairro" label="lbbairro" value="#{cadastroMB.cadastro_pessoa.bairro}" onblur="tiracor()" class="imput"/>
+
+                    <h:outputLabel id="lbtelefone" value="Telefone" for="edtelefone" class="labcad"/>              
+                    <h:inputText id="edtelefone" label="lbtelefone" value="#{cadastroMB.cadastro_pessoa.telefone}" onblur="tiracor()" class="imput"/>
+
+                    <h:outputLabel id="lbemail" value="Email" for="edemail" class="labcad"/>  
+                    <h:inputText id="edemail" label="lbemail" value="#{cadastroMB.cadastro_pessoa.email}" onblur="tiracor()" class="imput"/>
+
+                    <h:outputLabel id="lbsenha" value="Senha" for="edsenha" class="labcad"/>  
+                    <h:inputSecret id="edsenha" label="lbsenha" value="#{cadastroMB.cadastro_pessoa.senha}" onblur="tiracor()" class="imput"/>
+
+                    <h:outputLabel id="lbconfirmasenha" value="Confirme a senha" for="edconfirmasenha" class="labcad"/>  
+                    <h:inputSecret id="edconfirmasenha" label="lbconfirmasenha" 
+                                   value="#{cadastroMB.cadastro_pessoa.conf_senha}" onblur="tiracor()" class="imput"/>
+
+                </h:panelGrid>
+                <h:commandButton id="btCadastrar" value="Cadastrar" action="#{cadastroMB.salvar()}"  onfocus="return validar()" class="botao"/>
+                <h:commandButton id="btLimpar" value="Novo" action="#{cadastroMB.novo()}" class="botao"/>
+                <h:outputText value="#{cadastroMB.mensagem}"  style="color: red"/>
+
+            </h:form>
+        </div>
+
+        <div id="rodape">
+            <div id="texto_rodape">Lancheria Querência / Bagé-RS / Brasil, Avenida Santa Tecla 6850 
+                contato@tchelanches.com.br / (53)32470000 / (53)32470001 Todos os direitos reservados
+            </div>
+        </div>
+
+    </h:body>
+</html>
+

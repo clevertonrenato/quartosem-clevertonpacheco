@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cardápio</title>
+        <link href="estilos/tcc1.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div id="pagina">
+            <div id="primeira">
+                <img src="img/logo1.png" class="logo"/>
+                <div id="log">
+                    <h:form>
+                        <h:outputLabel>Login</h:outputLabel><br/> 
+                        <h:inputText value="#{loginMB.usuario.email}" class="escrever"></h:inputText><br/> 
+                        <h:outputLabel>Senha</h:outputLabel><br/> 
+                        <h:inputSecret value="#{loginMB.usuario.conf_senha}" class="escrever"></h:inputSecret><br/>
+                        <h:commandButton action="#{loginMB.login()}" id="btentrar" value="Entrar" class="entrar"/>
+                        <h:commandButton value="Sair" action="#{loginMB.logout()}" class="entrar"/><br/>
+                        <h:outputText value="#{loginMB.mensagem}" style="color: red;"/>
+                    </h:form>
+                </div>
+                <img src="img/20-anos.png" class="capa"/>
+            </div>
+
+            <div id="link">
+                <ul class="menu">
+                    <li><a href="index.xhtml" class="linkhome">Home</a></li>
+                    <li><a href="empresa.xhtml" class="linkempresa">Sobre</a></li>
+                    <li><a href="visao/pedido.xhtml" class="linkservicos">Pedido</a></li>
+                    <li><a href="cardapio.xhtml" class="linkfotos">Cardápio</a></li>
+                    <li><a href="formulariocadastro.xhtml" class="linkcontatos">Cadastro</a></li>
+                    <li><a href="contato.xhtml" class="linkcontatos">Contato</a></li>
+                </ul>
+            </div>
+
+            <div id="card">
+
+                <h:form>
+                    <h:dataTable var="cadprods" value="#{cadprodutoMB.cadprods}" styleClass="tabela1" 
+                                 headerClass="cabecalho1" columnClasses="ultimo1, primeiro1,seg1">
+
+                        <h:column>
+                            <f:facet name="header">
+                                Produtos
+                            </f:facet>
+                            #{cadprods.lanche}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Itens
+                            </f:facet>
+                            #{cadprods.itens}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Preço lanche
+                            </f:facet>
+                            <h:outputText value="#{cadprods.precolanche}">
+                                <f:convertNumber type="currency"/>
+                            </h:outputText>
+                        </h:column>
+
+
+                    </h:dataTable>
+
+                </h:form>
+            </div>
+                <div id="rodape">
+                    <div id="texto_rodape">Lancheria Querência / Bagé-RS / Brasil, Avenida Santa Tecla 6850 
+                        contato@tchelanches.com.br / (53)32470000 / (53)32470001 Todos os direitos reservados
+                    </div>
+                </div>
+            </div>
+    </h:body>
+</html>
+

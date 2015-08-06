@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <link href="estilos/tcc1.css" rel="stylesheet" type="text/css"/>
+        <title>A empresa</title>
+    </h:head>
+    <h:body>
+        <div id="pagina">
+            <div id="primeira">
+                <img src="img/logo1.png" class="logo"/>
+                <div id="log">
+                    <h:form>
+                        <h:outputLabel>Login</h:outputLabel><br/> 
+                        <h:inputText value="#{loginMB.usuario.email}" class="escrever"></h:inputText><br/> 
+                        <h:outputLabel>Senha</h:outputLabel><br/> 
+                        <h:inputSecret value="#{loginMB.usuario.conf_senha}" class="escrever"></h:inputSecret><br/>
+                        <h:commandButton action="#{loginMB.login()}" id="btentrar" value="Entrar" class="entrar"/>
+                        <h:commandButton value="Sair" action="#{loginMB.logout()}" class="entrar"/>
+                        <h:outputText value="#{loginMB.mensagem}" style="color: red;"/>
+                    </h:form>
+                </div>
+                <img src="img/20-anos.png" class="capa"/>
+            </div>
+
+            <div id="link">
+                <ul class="menu">
+                    <li><a href="index.xhtml" class="linkhome">Home</a></li>
+                    <li><a href="empresa.xhtml" class="linkempresa">Sobre</a></li>
+                    <li><a href="visao/pedido.xhtml" class="linkservicos">Pedido</a></li>
+                    <li><a href="cardapio.xhtml" class="linkfotos">Cardápio</a></li>
+                    <li><a href="formulariocadastro.xhtml" class="linkcontatos">Cadastro</a></li>
+                    <li><a href="contato.xhtml" class="linkcontatos">Contato</a></li>
+                </ul>
+            </div>
+
+            <h1 id="titulohistoria">Conheça um pouco da nossa história</h1>
+            <div id="historia">
+                <p> Em setembro de 1989, Rudy Arno Herberts e Elvira Olinda Herberts iniciaram um empreendimento que acabou por se tornar uma grande família.</p>
+
+                <p>Na Av. santa tecla 6850, ao lado de um posto de gasolina, nascia um pequeno trailer, onde com muito amor e carinho se preparavam deliciosos lanches para uma clientela que crescia cada vez mais, fruto da qualidade dos produtos ali comercializados.</p>
+
+                <p>Dois anos depois, em junho de 1991, o pequeno trailer expande sua área onde ficava o posto e uma estrutura é especialmente montada para atender os clientes e amigos que lotam o estabelecimento.</p>
+
+                <p>Em maio de 1993 a Querência Lanches troca de endereço e passa para uma loja junto a praça Alberto Ramos no qual permanece por 8 anos. Em abril de 2001, passa suas instalações para a Av. Assis Brasil 641, ampliando sua capacidade de produção e aumentando o número de lugares para seus clientes, tanto na área interna quanto externa da loja.</p>
+
+                <p>Passado nove anos, a Querência Lanches Lanches faz nova mudança. Desta vez, localizado na Av. Plinio Brasil Milano 2402, em frente ao Carrefour Passo D'Areia está com uma loja de amplo espaço interno, estacionamento próprio, rede wi-fi para seus clientes e muitas outras novidades.</p>
+
+                <p>Agora é sua vez de participar desta história de família. Venha com seus amigos e familiares para a tche lanches experimentar os deliciosos lanches que a mais de 34 anos fazem o maior sucesso em Bagé.</p>
+                    
+
+            </div>
+
+             <div id="rodape">
+                <div id="texto_rodape">Lancheria Querência / Bagé-RS / Brasil, Avenida Santa Tecla 6850 
+                    contato@tchelanches.com.br / (53)32470000 / (53)32470001 Todos os direitos reservados
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+

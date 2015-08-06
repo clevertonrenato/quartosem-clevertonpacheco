@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <label>Nome</label>
+        <input name="nome" /><br/>
+        <label>Login</label>
+        <input name="login" autofocus /><br/>
+        <label>Senha</label>
+        <input name="senha" /><br/>
+        <hr/>
+
+        <label>pesquisar</label>
+        <input name="pesquisar" placeholder="Pesquisar aqui..." /><br/>
+        <hr/>
+
+        <form>
+            <label>Login</label>
+            <input name="login" required /><br/>
+
+            <label>Senha</label>
+            <input name="senha" maxlength="6" required /><br/>
+
+            <input type="submit"  name="Enviar" />
+        </form>
+        <hr/>
+        <form>
+            <label>Alphanuméricos</label>
+            <input name="alpha" pattern="[a-zA-Z0-9]"/><br/>
+
+            <label>Alphanuméricos 15 digitos</label>
+            <input name="alpha" pattern="[a-zA-Z0-9_]{5,15}"/><br/><!--usa letras maiúscula, minúscula números entre 5 e 15-->
+
+            <label>Email</label>
+            <input name="email" type="email"/><br/>
+
+
+            <label>Preço</label>
+            <input name="preco"  required pattern="\d+([,.]\d{2})"/><br/><!--aceita oq esta dentro dos colchetes-->
+
+            <label>Cor html</label>
+            <input name="cor" pattern="#([a-fA-F0-9]{6})"/><br/>
+
+            <label>CEP</label>
+            <input name="cep" pattern="{6}{3}"/><br/>
+            
+            <input type="submit"  name="Enviar" />
+        </form>
+    </body>
+</html>

@@ -35,18 +35,19 @@ public class CotacaoMB {
     public void setVariacao(float variacao) {
         this.variacao = variacao;
     }
-    
-    
-           
+
     public CotacaoMB() {
     }
+
+    public void consulta() throws Exception {
+        if (this. != null) {
+            String url = " http://developers.agenciaideias.com.br/tempo/json/" + cidade;
+            //chamada da classe webservice
+            WebService ws = new WebService();
+            String resultado = ws.sendGet(url);
+            System.out.println(resultado);
+
+        }
     
-    public void consulta() throws Exception{
-        if(this. != null){
-    String url = " http://developers.agenciaideias.com.br/tempo/json/"+cidade;
-    //chamada da classe webservice
-    WebService ws = new WebService();
-    String resultado = ws.sendGet(url);
-     System.out.println(resultado);
-    
+}
 }

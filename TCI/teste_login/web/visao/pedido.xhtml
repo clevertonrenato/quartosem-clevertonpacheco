@@ -40,48 +40,49 @@
                 <h3>Faça seu pedido</h3>
 
 
-                <!--<div id="pedidolanche">-->
+                <div id="pedidolanche">
 
-                <h4>Lanches</h4>
-                <h:form>
+                    <h4>Lanches</h4>
+                    <h:form>
 
-                    <h:inputHidden id="edIDOculto" value="#{pedidoMB.pedido.numero}"/>
+                        <h:inputHidden id="edIDOculto" value="#{pedidoMB.pedido.numero}"/>
 
-                    <h:selectOneMenu value="#{pedidoMB.pedido.lanche}">
-                        <f:selectItems value="#{cadprodutoMB.cadprods}"/>
-                    </h:selectOneMenu>
+                        <h:selectOneMenu value="#{pedidoMB.idProduto}">
+                            <f:selectItems var="produto" value="#{cadprodutoMB.cadprods}" itemLabel="#{produto.lanche}" itemValue="#{produto.id}"/>
+                        </h:selectOneMenu>
 
-                    <h:selectOneMenu id="edqtdlanche" value="#{pedidoMB.pedido.qtdlanche}" >
-                        <f:selectItem itemLabel="0" itemValue="0" />
-                        <f:selectItem itemLabel="1" itemValue="1" />
-                        <f:selectItem itemLabel="2" itemValue="2" />
-                        <f:selectItem itemLabel="3" itemValue="3" />
-                        <f:selectItem itemLabel="4" itemValue="4" />
-                        <f:selectItem itemLabel="5" itemValue="5" />
-                        <f:selectItem itemLabel="6" itemValue="6" />
-                        <f:selectItem itemLabel="7" itemValue="7" />
-                        <f:selectItem itemLabel="8" itemValue="8" />
-                        <f:selectItem itemLabel="9" itemValue="9" />
+                        <h:selectOneMenu id="edqtdlanche" value="#{pedidoMB.quantidade}" >
+                            <f:selectItem itemLabel="1" itemValue="1" />
+                            <f:selectItem itemLabel="2" itemValue="2" />
+                            <f:selectItem itemLabel="3" itemValue="3" />
+                            <f:selectItem itemLabel="4" itemValue="4" />
+                            <f:selectItem itemLabel="5" itemValue="5" />
+                            <f:selectItem itemLabel="6" itemValue="6" />
+                            <f:selectItem itemLabel="7" itemValue="7" />
+                            <f:selectItem itemLabel="8" itemValue="8" />
+                            <f:selectItem itemLabel="9" itemValue="9" />
 
-                    </h:selectOneMenu>       
+                        </h:selectOneMenu>       
 
-                   <h4>Observação</h4>
+                        <h4>Observação</h4>
 
-                        <h:inputTextarea id="edobs" label="lbobs" value="#{pedidoMB.pedido.obs}"/><br/>
-
-
-                    <h4>Pagamento</h4>
-                    <h:selectOneMenu id="edpagamento" value="#{pedidoMB.pedido.formapagamento}">
-                        <f:selectItem itemLabel="Dinheiro" itemValue="dinheiro" />
-                        <f:selectItem itemLabel="Cartão(todos)" itemValue="cartão" />
-                    </h:selectOneMenu><br/><br/>
-
-                    <h:commandButton id="btpedido" value="Adicionar" action="#{pedidoMB.salvar()}"  />
-                    <h:outputText value="#{pedidoMB.mensagem}"  style="color: red"/>
-
-                </h:form>
+                        <h:inputTextarea id="edobs" label="lbobs" value="#{pedidoMB.observacao}"/><br/>
 
 
+                        <h4>Pagamento</h4>
+                        <h:selectOneMenu id="edpagamento" value="#{pedidoMB.pedido.formapagamento}">
+                            <f:selectItem itemLabel="Dinheiro" itemValue="dinheiro" />
+                            <f:selectItem itemLabel="Cartão(todos)" itemValue="cartão" />
+                        </h:selectOneMenu><br/><br/>
+
+                        <h:commandButton id="btpedido" value="Adicionar" action="#{pedidoMB.adicionarItem()}"  >
+
+                        </h:commandButton>
+                        <h:outputText value="#{pedidoMB.mensagem}"  style="color: red"/>
+
+                    </h:form>
+
+                </div>
 
 
 
@@ -89,21 +90,21 @@
 
                     <h:form>
 
-                        <h:dataTable  var="ped" value="#{pedidoMB.pedidos}" styleClass="tabela" 
+                        <h:dataTable  var="ped" value="#{pedidoMB.pedido.pedidoitem}" styleClass="tabela" 
                                       headerClass="cabecalho" columnClasses="ultimo, primeiro,seg,terc">
 
                             <h:column>
                                 <f:facet name="header">
-                                    Lanche
+                                    Lanche/Bebida
                                 </f:facet>
-                                #{ped.qtdlanche}
+                                #{ped.produto.lanche}
                             </h:column>
 
                             <h:column>
                                 <f:facet name="header">
                                     Qtd
                                 </f:facet>
-                                #{ped.qtdlanche}
+                                #{ped.quantidade}
                             </h:column>
 
 
@@ -111,12 +112,17 @@
                                 <f:facet name="header">
                                     Preço Unitário (R$)
                                 </f:facet>
-                                <h:outputText >
+                                <h:outputText value="#{ped.unitario}">
                                     <f:convertNumber type="currency"/>
                                 </h:outputText>
                             </h:column> 
 
-                           
+                                           
+                            <h:column>
+                                <h:commandLink value="Excluir"
+                                               onclick="return confirm('Deseja realmente excluir?')"
+                                               action="#{pedidoMB.excluirItemCarrinho(ped)}"/>                    
+                            </h:column>  
 
 
                         </h:dataTable>

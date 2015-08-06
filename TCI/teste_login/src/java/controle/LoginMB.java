@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package controle;
 
 import java.sql.SQLException;
@@ -13,7 +9,7 @@ import seguranca.Acesso;
 
 /**
  *
- * @author emilio
+ * @author renato
  */
 @ManagedBean
 @RequestScoped
@@ -43,7 +39,8 @@ public class LoginMB {
     }
 
     public String login() throws SQLException {
-        if (!usuarioDAO.verificaLogin(this.usuario)) {
+        this.usuario = usuarioDAO.verificaLogin(this.usuario);
+        if (null==this.usuario) {
             mensagem = "Usuário ou senha inválida, tente novamente.";
             return "/index";
         } else {

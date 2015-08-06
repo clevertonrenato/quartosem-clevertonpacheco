@@ -18,10 +18,13 @@
                     <h:form>
                         <h:outputLabel>Login</h:outputLabel><br/> 
                         <h:inputText value="#{loginMB.usuario.email}" class="escrever"></h:inputText><br/> 
+                        
                         <h:outputLabel>Senha</h:outputLabel><br/> 
                         <h:inputSecret value="#{loginMB.usuario.conf_senha}" class="escrever"></h:inputSecret><br/>
+                       
                         <h:commandButton action="#{loginMB.login()}" id="btentrar" value="Entrar" class="entrar"/>
                         <h:commandButton value="Sair" action="#{loginMB.logout()}" class="entrar"/>
+                       
                         <h:outputText value="#{loginMB.mensagem}" style="color: red;"/>
                     </h:form>
                 </div>
@@ -41,11 +44,7 @@
 
             <div id="segunda">
 
-                <!-- <ul id="typing">
-                     <li>Visite nosso site Cadastre-se e faça seu pedido</li>
-                     <li>Lancheria Thê Lanches agradece a preferência</li>
- 
-                 </ul> --> 
+              
                 <img src="img/gif.gif"/>
 
             </div>
