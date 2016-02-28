@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Dados dos clientes</title>
+    </h:head>
+    <h:body>
+        <h1>Informações dos clientes</h1>
+        <h:form>
+            <h:dataTable value="#{cadastroMB.informacoes}" var="cliente" style="border-spacing: 5px; background: #FFFFF0; border: dashed red 1px;">
+                <h:column>
+                    <f:facet name="header">
+                        <h:commandLink value="ID" action="#{cadastroMB.ordenaPorId()}"/>
+                    </f:facet>
+                    #{cliente.id}
+                </h:column>
+                <h:column>                    
+                    <f:facet name="header">
+                        <h:commandLink value="Nome" action="#{cadastroMB.ordenaPorNome()}"/>
+                    </f:facet>
+                    #{cliente.nome}
+                </h:column> 
+
+                <h:column>
+                    <f:facet name="header">
+                        Endereço
+                    </f:facet>
+                    #{cliente.endereco}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        Número
+                    </f:facet>
+                    #{cliente.numero}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        Bairro
+                    </f:facet>
+                    #{cliente.bairro}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        Complemento
+                    </f:facet>
+                    #{cliente.complemento}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        Telefone
+                    </f:facet>
+                    #{cliente.telefone}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        Cpf
+                    </f:facet>
+                    #{cliente.cpf}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        Email
+                    </f:facet>
+                    #{cliente.email}
+                </h:column>
+                
+               
+
+            </h:dataTable>
+
+            <h:commandButton value="Voltar" action="principal"/>
+        </h:form>
+
+    </h:body>
+</html>
+

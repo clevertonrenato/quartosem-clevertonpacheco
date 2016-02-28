@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastro dos produtos</title>
+    </h:head>
+    <h:body>
+        <h1>Cadastrar produtos</h1>
+
+        <h:form>
+            <h:inputHidden value="#{cadprodutoMB.conta.id}"/>
+            <h:panelGrid columns="2">
+
+                Produto
+                <h:inputText value="#{cadprodutoMB.conta.lanche}"/>
+                Itens
+                <h:inputText value="#{cadprodutoMB.conta.tipo}"/>
+                Preço do produto
+                <h:inputText  value="#{cadprodutoMB.conta.precolanche}">
+                    <f:convertNumber type="currency" currencySymbol="R$"/>
+                </h:inputText>
+            </h:panelGrid>
+            <h:commandButton value="Novo" action="#{cadprodutoMB.novo()}"/>
+            <h:commandButton value="Salvar" action="#{cadprodutoMB.salvar()}"/>
+            <h:commandButton value="Voltar" action="principal"/>
+        </h:form>
+        <h1>Lista de produtos</h1>
+        <h:form>
+            <h:dataTable value="#{cadprodutoMB.contas}" var="conta" style="border-spacing: 5px; background: #FFFFF0; border: dashed red 1px;">
+                <h:column>
+                    <f:facet name="header">
+                        <h:commandLink value="ID" action="#{cadprodutoMB.ordenaPorID()}"/>
+                    </f:facet>
+                    #{conta.id}
+                </h:column>
+                <h:column>                    
+                    <f:facet name="header">
+                        <h:commandLink value="Nome" action="#{cadprodutoMB.ordenaPorNome()}"/>
+                    </f:facet>
+                    #{conta.lanche}
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">
+                        <h:commandLink value="Itens" action="#{cadprodutoMB.ordenaPorTipo()}"/>
+                    </f:facet>
+                    #{conta.tipo}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:commandLink value="Valor" action="#{cadprodutoMB.ordenaPorValor()}"/>
+                    </f:facet>
+                    #{conta.precolanche}
+                </h:column>
+
+                <h:column>
+                    <h:commandLink value="Editar" action="#{cadprodutoMB.editar(conta)}"/>
+                </h:column>                
+                <h:column>
+                    <h:commandLink value="Excluir"
+                                   onclick="return confirm('Deseja realmente excluir?')"
+                                   action="#{cadprodutoMB.excluir(conta)}"/>                    
+                </h:column>                                
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

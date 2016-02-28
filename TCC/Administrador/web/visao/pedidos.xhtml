@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"  >   
+
+    <h:head>
+        <title>Controle de pedidos</title>
+        <Meta http-equiv = "refresh" content = "15" /> 
+    </h:head>
+    <h:body>
+        <h1>Lista de pedidos</h1>
+
+
+
+        <h:form>
+            <h:commandButton value="Voltar" action="principal"/>
+            <h:dataTable var="ped" value="#{pedidoMB.pedinfo}" style="border-spacing: 5px; background: #FFFFF0; border: dashed red 1px;">
+                <h:column>
+                    <f:facet name="header">
+                        Id pedido
+                    </f:facet>
+                    #{ped.idpedido}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Cliente
+                    </f:facet>
+                    #{ped.cliente.nome}
+                </h:column>  
+                <h:column>
+                    <f:facet name="header">
+                        Situação
+                    </f:facet>
+                    #{ped.situacao}
+                </h:column> 
+                <h:column>
+                    <h:commandLink value="Montar" action="#{pedidoMB.alterar(ped)}"/>
+                </h:column> 
+                <h:column>
+                    <h:commandLink value="Fechar" action="#{pedidoMB.fechar(ped)}"/>
+                </h:column> 
+            </h:dataTable>
+        </h:form>
+        <hr/>
+        <h:form>
+            <h1>Lista de pedidos detalhados</h1>
+            <h:dataTable var="cadprods" value="#{pedidoMB.pedidos}" style="border-spacing: 5px; background: #FFFFF0; border: dashed red 1px;">
+
+                <h:column>
+                    <f:facet name="header">
+                        Id pedido
+                    </f:facet>
+                    #{cadprods.idpedido}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Data
+                    </f:facet>
+                    <h:outputText value="#{cadprods.data}">
+                        <f:convertDateTime pattern="dd/MM/yyyy" timeZone="GMT-3:00"/>
+                    </h:outputText>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        Cliente
+                    </f:facet>
+                    #{cadprods.cliente.nome}
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">
+                        Endereço
+                    </f:facet>
+                    #{cadprods.cliente.endereco}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Número
+                    </f:facet>
+                    #{cadprods.cliente.numero}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Complemento
+                    </f:facet>
+                    #{cadprods.cliente.complemento}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Bairro
+                    </f:facet>
+                    #{cadprods.cliente.bairro}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Telefone
+                    </f:facet>
+                    #{cadprods.cliente.telefone}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Qtd
+                    </f:facet>
+                    #{cadprods.pedidoitens.quantidade}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Lanche
+                    </f:facet>
+                    #{cadprods.pedidoitens.produto.lanche}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Obs
+                    </f:facet>
+                    #{cadprods.pedidoitens.observacao}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Valor unitário
+                    </f:facet>
+                    <h:outputText value="#{cadprods.pedidoitens.unitario}">
+                        <f:convertNumber type="currency"/>
+                    </h:outputText>
+                </h:column> 
+
+                
+            </h:dataTable>
+
+
+            <!--  <h3>DataModel</h3>
+              <p:accordionPanel value="{pedidoMB.pedidos}" var="cadprods">
+                  <p:tab title="Data: {cadprods.data} / Cliente: {cadprods.cliente.nome}  ">
+                      <h:panelGrid columns="2" cellpadding="5">
+                          <f:facet 
+                              name="header">
+  
+                          </f:facet>                    
+                          <h:outputText value="Endereço: {cadprods.cliente.endereco}" style="font-weight: bold" />
+                          <h:outputText value="" />
+  
+                          <h:outputText 
+                              value="Year:" style="font-weight: bold" />
+                          <h:outputText value="" />
+  
+                          <h:outputText value="Color:" style="font-weight: bold" />
+                          <h:outputText value="" />
+  
+                          <h:dataTable var="i" value="{cadprods.itens}" styleClass="tabela" 
+                                       headerClass="cabecalho" columnClasses="ultimo, primeiro,seg">
+  
+                              <h:column>
+                                  <f:facet name="header">
+                                      No
+                                      
+                                  </f:facet>
+                                  
+                              </h:column>
+  
+  
+                          </h:dataTable> 
+                      </h:panelGrid>
+                  </p:tab>
+              </p:accordionPanel>-->
+
+        </h:form>
+
+    </h:body>
+</html>
+
